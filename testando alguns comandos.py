@@ -1,6 +1,6 @@
 #input
 
-'''print("digite seu nome")
+print("digite seu nome")
 nome=input()
 print(nome)
 
@@ -51,6 +51,6 @@ print(10*'Diego\n')
 
 print("+"+10*"-"+"+")
 print(("|"+" "*10+"|\n")*5,end="")
-print("+"+10*"-"+"+")'''
+print("+"+10*"-"+"+")
 
 
