@@ -1,0 +1,10 @@
+prod=str(input("qual o nome do produto: "))
+print(prod)
+quant=int(input("quantidade que vc comprou desse produto: "))
+print(quant)
+valor=float(input("qual o valor do produto individual: "))
+print(valor)
+desc=float(input("qual o desconto do produto: "))
+print(desc)
+total=((valor*desc)/100)
+print
