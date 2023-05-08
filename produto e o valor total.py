@@ -6,5 +6,5 @@ valor=float(input("qual o valor do produto individual: "))
 print(valor)
 desc=float(input("qual o desconto do produto: "))
 print(desc)
-total=((valor*desc)/100)
-print
+total=(valor-(valor*desc)/100)
+print("%.2f"%(total*quant))
