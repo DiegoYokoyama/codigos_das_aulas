@@ -1,2 +1,3 @@
 nome=input('escreva seu nome completo: ')
-print(nome.count('a'))
+nome=(nome.upper())
+print(nome.count('A'))
