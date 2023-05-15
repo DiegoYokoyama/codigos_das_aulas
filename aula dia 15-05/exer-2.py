@@ -1,6 +1,6 @@
 t=[1,2,3,4]
 del t[0]
-del t[-1]
+del t[-1]#se eu tivesse colocado 3 nao ia funcionar pq o indice ja alterou
 print(t)
 
 a=[1,2,3,4]
