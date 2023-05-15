@@ -1,5 +1,5 @@
 sexo=input('Digiote seu sexo F para Feminino M para masculino é O para outros:')
-sexo=sexo.upper()
+sexo=sexo.upper()#toda os elemento digitado vai se transformar em maiusculo
 if sexo=='F':
     print('seu sexo e Feminino')
 elif sexo=='M':
