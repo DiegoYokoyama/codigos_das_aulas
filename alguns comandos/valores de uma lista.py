@@ -152,3 +152,5 @@ a.pop()
 print(a)
 a.pop(4)
 print(a)
+
+#simbolos (a<b)o B e maior que A (a>b) o A e maior que B
