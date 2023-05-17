@@ -18,4 +18,6 @@ elif num3>num and num>num2:
     print(num3,num,num2)
 
 
-
+lista = [num,num2,num3]
+lista.sort(reverse=True)
+print(lista)
