@@ -16,3 +16,4 @@ print('=========================================================================
 #para um numero ser divisível por 4 se os 2 ultimo numero e divisível por 4 exemplo 512,100,236
 #agora alguns num que nao atende a esse criterio exemplo: 103,550,361
 #fiquei um pouco bugado nesse exercicio mais acho que e isso 
+#Um número é divisível por 6 se for par e a soma de seus algarismos for divisível por 3.
