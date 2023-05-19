@@ -11,5 +11,5 @@ else:#esse else vai colocar o numero que e divisível por 6
 print('Obrigado volte Sempre que tiver duvida')#coloquei um printe com obrigado 
 
 #para um numero ser divisível por 4 se os 2 ultimo numero e divisível por 4 exemplo 512,100,236
-#agora alguns num que nao atende a esse criterio exemplo: 103,550,360
+#agora alguns num que nao atende a esse criterio exemplo: 103,550,361
 #fiquei um pouco bugado nesse exercicio mais acho que e isso 
