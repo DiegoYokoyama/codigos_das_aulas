@@ -2,7 +2,7 @@ import os
 while True:
     print('*','='*70,'*')
     print('                           Bem Vindo a Calculadora                       \n')
-    print(' 1=Multiplicação \n 2=Divisão \n 3=Adição \n 4=Subtração \n 5=Volume de um cubo \n 6=exponemciação \n 7=Raiz quadrada \n 8=Area de um quadrado \n 9=Media 4 numero \n 10=Fatoração \n 0=Sair')
+    print(' 1=Multiplicação \n 2=Divisão \n 3=Adição \n 4=Subtração \n 5=Volume de um cubo \n 6=exponemciação \n 7=Raiz quadrada \n 8=Area de um quadrado \n 9=Media 4 numero \n 10=Fatorial \n 0=Sair')
     calculadora=int(input(' Digite o numero que vc vai querer usar: '))
     if calculadora == 1:
         n1=float(input('Digite um numero: '))
