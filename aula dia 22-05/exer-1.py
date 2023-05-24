@@ -26,7 +26,7 @@ corr=[]
 cont=0
 matricula=[] 
 while True:
-    op=input('1 - cadastro\n2 - consulta\n0 - sair\nDigite aqui: ')
+    op=input('1 - cadastro\n2 - consulta\n3 - matricula a ser excluida\n0 - sair\n Digite aqui: ')
     if op== '0':
         break
     elif op=='1':
@@ -105,7 +105,10 @@ while True:
         mat=int(input('Digite a matricula : '))
         print(matricula[mat-1],'\n', n[mat-1],'\n', sobre[mat-1],'\n', srua[mat-1],'\n', bairo[mat-1],'\n', cid[mat-1],'\n', esta[mat-1],'\n', paiis[mat-1],'\n', fone[mat-1],'\n', cpff[mat-1],'\n', pesso[mat-1],'\n', alt[mat-1],'\n', ida[mat-1],'\n', cartao[mat-1],'\n', cepp[mat-1],'\n', emai[mat-1],'\n', m1[mat-1],'\n', m2[mat-1],'\n', m3[mat-1],'\n', m4[mat-1],'\n', med[mat-1],'\n', seri[mat-1],'\n', clase[mat-1],'\n', sexoo[mat-1],'\n', corr[mat-1])
         os.system('pause')
-
+    elif op =='3':
+        delete=int(input('Digite a matricula a ser excluida: '))
+        (matricula.pop(mat-1)),'\n', (n.pop(mat-1)),'\n', (sobre.pop(mat-1)),'\n', (srua.pop(mat-1)),'\n', (bairo.pop(mat-1)),'\n', (cid.pop(mat-1)),'\n', (esta.pop(mat-1)),'\n', (paiis.pop(mat-1)),'\n', (fone.pop(mat-1)),'\n', (cpff.pop(mat-1)),'\n', (pesso.pop(mat-1)),'\n', (alt.pop(mat-1)),'\n', (ida.pop(mat-1)),'\n', (cartao.pop(mat-1)),'\n', (cepp.pop(mat-1)),'\n', (emai.pop(mat-1)),'\n', (m1.pop(mat-1)),'\n', (m2.pop(mat-1)),'\n', (m3.pop(mat-1)),'\n', (m4.pop(mat-1)),'\n', (med.pop(mat-1)),'\n', (seri.pop(mat-1)),'\n', (clase.pop(mat-1)),'\n', (sexoo.pop(mat-1)),'\n', (corr.pop(mat-1))
+        os.system('pause')
 
 
 
