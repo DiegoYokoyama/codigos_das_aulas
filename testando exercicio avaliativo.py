@@ -22,7 +22,7 @@ print('=========================================================================
 #agora alguns num que nao atende a esse criterio exemplo: 103,550,361
 #fiquei um pouco bugado nesse exercicio mais acho que e isso 
 #Um número é divisível por 6 se for par e a soma de seus algarismos for divisível por 3.
-
+nu=[]
 while True:
         op=input(' 1 - digite 1 para digitar um numero\n 2 - digite 2 para saber qual é o maior numero, e o menor numero\n Digite aqui: ')
         if op=='1':
