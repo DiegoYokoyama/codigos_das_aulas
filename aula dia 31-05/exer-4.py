@@ -14,7 +14,7 @@ for a in range(1,6):
         cidadeMaior=a+1
     somaA=somaA+acidente
     if veiculos <2000:
-        somaA2000=somaA2000+acidente
+        somaA2000=somaA2000+veiculos
         cont=cont+1
     media=somaA/5
     media2000=somaA2000/cont
