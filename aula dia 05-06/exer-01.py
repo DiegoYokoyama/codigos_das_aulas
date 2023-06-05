@@ -35,7 +35,13 @@ while True:
                 print('Digite apenas numeros!, sem ponto,traço,virgula, etc')
                 continue
             else:
-                listaNome.append(nome,sobrenome,rg,cpf,endereco,telefone,idade)
+                listaNome.append(nome)
+                listaNome.append(sobrenome)
+                listaNome.append(rg)
+                listaNome.append(cpf)
+                listaNome.append(endereco)
+                listaNome.append(telefone)
+                listaNome.append(idade)
                 break
 
 
@@ -62,7 +68,11 @@ while True:
                 print('Digite apenas numeros!')
                 continue
             else:
-                listaDestino.append(destino,origem,duração,valordaPassagem,desconto)
+                listaDestino.append(destino)
+                listaDestino.append(origem)
+                listaDestino.append(duração)
+                listaDestino.append(valordaPassagem)
+                listaDestino.append(desconto)
                 break
     if menu=='3':
         while True:
@@ -87,7 +97,11 @@ while True:
                 print('Digite apenas numeros!')
                 continue
             else:
-                listaModelo.append(modelo,ano,horaDeVoo,cor,quantidadeDePassageiro)
+                listaModelo.append(modelo)
+                listaModelo.append(ano)
+                listaModelo.append(horaDeVoo)
+                listaModelo.append(cor)
+                listaModelo.append(quantidadeDePassageiro)
                 break
     if menu=='4':
         while True:
@@ -112,7 +126,12 @@ while True:
                 print('Digite apenas numeros!, sem ponto,traço,virgula, etc')
                 continue
             else:
-                nomeTripulacao.append(nome,descricao,idade,dataDeAdimissao,telefone)
+                nomeTripulacao.append(nome)
+                nomeTripulacao.append(descricao)
+                nomeTripulacao.append(idade)
+                nomeTripulacao.append(dataDeAdimissao)
+                nomeTripulacao.append(telefone)
+                
                 break
     if menu== '5':
          while True:
@@ -125,6 +144,8 @@ while True:
             print('===============Cadastro Tripulação==============')
             print(nomeTripulacao)
             os.system('pause')
+            os.system('cls')
+            break
         
     
 
