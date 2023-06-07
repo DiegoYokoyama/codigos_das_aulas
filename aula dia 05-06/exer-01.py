@@ -4,7 +4,7 @@ listaDestino=[]
 listaModelo=[]
 nomeTripulacao=[]
 while True:
-    menu=input(' 1-Cadastro Cliente\n 2-Cadastro Passagem\n 3-Cadastro Avião\n 4-Cadastro Tripulação\n 5-imprimir a lista\n 6- Digite aqui:  ')
+    menu=input(' 1-Cadastro Cliente\n 2-Cadastro Passagem\n 3-Cadastro Avião\n 4-Cadastro Tripulação\n 5-imprimir a lista\n 6-Sair \n Digite aqui:  ')
 
     if menu== '1':
         while True:
@@ -61,7 +61,8 @@ while True:
                 valordaPassagem=float(input('Digite o Valor da Passagem: '))
                 os.system('pause')
                 os.system('cls')
-                desconto=0.05
+                desconto=(valordaPassagem*0.05)
+                valorTotal=valordaPassagem-desconto
                 os.system('pause')
                 os.system('cls')
             except ValueError:
@@ -72,7 +73,7 @@ while True:
                 listaDestino.append(origem)
                 listaDestino.append(duração)
                 listaDestino.append(valordaPassagem)
-                listaDestino.append(desconto)
+                listaDestino.append(valorTotal)
                 break
     if menu=='3':
         while True:
@@ -146,7 +147,9 @@ while True:
             os.system('pause')
             os.system('cls')
             break
-        
+    if menu== '6':
+        print('Sair!')
+        break
     
 
 
