@@ -4,7 +4,7 @@ listaDestino=[]
 listaModelo=[]
 nomeTripulacao=[]
 while True:
-    menu=input(' 1-Cadastro Cliente\n 2-Cadastro Passagem\n 3-Cadastro Avião\n 4-Cadastro Tripulação\n 5-imprimir a lista\n 6-Sair \n Digite aqui:  ')
+    menu=input(' 1-Cadastro Cliente\n 2-Cadastro Passagem\n 3-Cadastro Avião\n 4-Cadastro Tripulação\n 5-imprimir a lista\n 0-Sair \n Digite aqui:  ')
 
     if menu== '1':
         while True:
@@ -136,18 +136,30 @@ while True:
                 break
     if menu== '5':
          while True:
-            print('===============Cadastro Cliente===============')
-            print(listaNome)
-            print('===============Cadastro Passagem==============') 
-            print(listaDestino)
-            print('===============Cadastro Avião=============')
-            print(listaModelo)
-            print('===============Cadastro Tripulação==============')
-            print(nomeTripulacao)
-            os.system('pause')
             os.system('cls')
+            relatorio=input(' 1-Para imprimir o Cadastro Cliente\n 2-Para imprimir o Cadastro Passagem\n 3-Para imprimir o Cadastro Avião\n 4-Para imprimir o Cadastro Tripulação\n Digite aqui: ')
+            if relatorio=='1':
+                print('===============Cadastro Cliente===============')
+                print(listaNome)
+                os.system('pause')
+                os.system('cls')
+            if relatorio=='2':
+                print('===============Cadastro Passagem==============') 
+                print(listaDestino)
+                os.system('pause')
+                os.system('cls')
+            if relatorio=='3':
+                print('===============Cadastro Avião=============')
+                print(listaModelo)
+                os.system('pause')
+                os.system('cls')
+            if relatorio=='4':    
+                print('===============Cadastro Tripulação==============')
+                print(nomeTripulacao)
+                os.system('pause')
+                os.system('cls')
             break
-    if menu== '6':
+    if menu== '0':
         print('Sair!')
         break
     
