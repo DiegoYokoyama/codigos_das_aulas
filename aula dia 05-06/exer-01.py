@@ -4,8 +4,13 @@ listaDestino=[]
 listaModelo=[]
 nomeTripulacao=[]
 while True:
-    menu=input(' 1-Cadastro Cliente\n 2-Cadastro Passagem\n 3-Cadastro Avião\n 4-Cadastro Tripulação\n 5-imprimir a lista\n 0-Sair \n Digite aqui:  ')
-
+    try:
+        menu=int(input(' 1-Cadastro Cliente\n 2-Cadastro Passagem\n 3-Cadastro Avião\n 4-Cadastro Tripulação\n 5-imprimir a lista\n 0-Sair \n Digite aqui:  '))
+    except ValueError:
+         print('Digite apenas numeros!')
+         os.system('pause')
+         os.system('cls')
+         continue
     if menu== '1':
         while True:
             try:
