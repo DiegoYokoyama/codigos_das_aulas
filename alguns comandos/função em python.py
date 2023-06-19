@@ -23,7 +23,7 @@ def calcular_pagamento(quant_hora,valor_hora):
     else:
         hora_exe=hora-40
         salario=40*taxa+(hora_exe*(1.5*taxa))
-        
+
         print(salario)
 calcular_pagamento(50,20)
 #===============================================
@@ -43,6 +43,15 @@ sobrenome=input("escreva seu Sobrenome: ")
 invertido=inverte(nome,sobrenome)
 print(invertido)
 #===============================================
+def cadastro():
+    name=input('qual seu nome: ')
+    age=int(input('Digite sua idade: '))
+    return name,age
+print('Iniciando cadastro')
+nome,idade=cadastro()
+print('cadastro realizado com sucesso: ')
+print('Seu nome é',nome,'\nSua idade é',idade)
+#===============================================
 def par(x):
     if x%2==0:
         return True
@@ -54,15 +63,5 @@ while True:
         print(num,'E par')
     else:
         print(num,'E impar')
-#===============================================
-def cadastro():
-    name=input('qual seu nome: ')
-    age=int(input('Digite sua idade: '))
-    return name,age
-print('Iniciando cadastro')
-nome,idade=cadastro()
-print('cadastro realizado com sucesso: ')
-print('Seu nome é',nome,'\nSua idade é',idade)
-#===============================================
 
 
