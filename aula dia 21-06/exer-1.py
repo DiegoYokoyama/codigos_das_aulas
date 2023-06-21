@@ -12,7 +12,7 @@ while True:
         os.system('cls')
         print(somaImposto(taxaImposto,custo))
     except ValueError:
-        print('Digite apenas numeros, no custo você pode pode usar numero quebrado mais na taxa de imposto não')
+        print('Digite apenas numeros, no produto você pode pode usar numero quebrado mais na taxa de imposto não')
 
 
 
