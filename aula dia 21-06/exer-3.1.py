@@ -1,8 +1,8 @@
 import os
 
 def valorPagamento(x,y):
-    juros=(0.1y)/100
-    multa=(x0.03)
+    juros=(0.1*y)/100
+    multa=(x*0.03)
     jurostotal=((x*juros)+multa)+x
     return jurostotal
 

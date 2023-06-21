@@ -35,4 +35,8 @@ while True:
             continue
         else:
             print('numero negativo por favor digite novamente')
-        
+
+print("------------------------------------------------------------------------------ Relatório do Dia ---------------------------------------------------------------------\nValores das Prestações em Ordem:")
+print('Valores das Prestações em Ordem:',prestaca)
+print('Dias de Atraso em Ordem',jurosdia)
+print('Valores finais a serem pagados',mult)    
