@@ -12,12 +12,7 @@ mult=[]
 while True:
     try:
         a=float(input('Digite o valor a pagar por uma prestação: '))
-        os.system("pause")
-        os.system("cls")
         b=float(input('digite os dias de atraso para ver os jutos: '))
-        os.system("pause")
-        os.system("cls")
-        print(valorPagamento(a,b))
         os.system("pause")
         os.system("cls")
     except ValueError:
@@ -36,7 +31,7 @@ while True:
         else:
             print('numero negativo por favor digite novamente')
 
-print("------------------------------------------------------------------------------ Relatório do Dia ---------------------------------------------------------------------\nValores das Prestações em Ordem:")
-print('Valores das Prestações em Ordem:',prestaca)
-print('Dias de Atraso em Ordem',jurosdia)
-print('Valores finais a serem pagados',mult)    
+print("------------------------------------------------------------------------------ Relatório do Dia ---------------------------------------------------------------------")
+print('Valores das Prestações em Ordem R$\n',prestaca)
+print('Dias de Atraso em Ordem R$\n',jurosdia)
+print('Valores finais a serem pagados em ordem R$\n',mult)    
