@@ -32,6 +32,14 @@ while True:
             print('numero negativo por favor digite novamente')
 
 print("------------------------------------------------------------------------------ Relatório do Dia ---------------------------------------------------------------------")
-print('Valores das Prestações em Ordem R$\n',prestaca)
-print('Dias de Atraso em Ordem R$\n',jurosdia)
-print('Valores finais a serem pagados em ordem R$\n',mult)    
+for a in prestaca:
+    print('\nValores das Prestações em Ordem')
+    print('R${:.2f}'.format(a))
+
+for b in jurosdia:
+    print('\nDias de Atraso em Ordem')
+    print(b)
+
+for c in mult:
+    print('\nValores finais a serem pagados em ordem')
+    print('R${:.2f}'.format(c))
