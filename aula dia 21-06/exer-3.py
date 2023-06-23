@@ -8,7 +8,7 @@ def valorPagamento(prestacao,dias):
 prestaca=[]
 jurosdia=[]
 mult=[]
-
+cont=0
 while True:
     try:
         a=float(input('Digite o valor a pagar por uma prestação: '))
@@ -35,6 +35,7 @@ print("-------------------------------------------------------------------------
 for a in prestaca:
     print('\nValores das Prestações em Ordem')
     print('R${:.2f}'.format(a))
+    cont=cont+1
 
 for b in jurosdia:
     print('\nDias de Atraso em Ordem')
@@ -43,3 +44,9 @@ for b in jurosdia:
 for c in mult:
     print('\nValores finais a serem pagados em ordem')
     print('R${:.2f}'.format(c))
+
+totalFinal=sum(mult)
+print('\nSoma do total a pagar')
+print('{:.2f}'.format(totalFinal))
+print('\na quantidade de conta paga ')
+print(cont)
