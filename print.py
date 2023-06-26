@@ -20,3 +20,5 @@ recursive = pprint.isrecursive(data)
 print(recursive)
 #--------------------------------------------------------------
 
+#https://docs.python.org/3/library/pprint.html
+#https://chat.openai.com/c/ee456ace-9b38-44dd-a914-ec4f2a556d96
