@@ -27,13 +27,3 @@ for email in emails:
     else:
         print(f"O endereço de e-mail '{email}' é inválido.")
 #------------------------------------------------------------------------
-
-# Texto de exemplo
-texto = "Olá! Meu número de telefone é (123) 456-7890. Por favor, me ligue."
-# Padrão de expressão regular para encontrar números de telefone
-padrao_telefone = r"\(\d{3}\) \d{3}-\d{4}"
-# Procurar por números de telefone no texto
-numeros_telefone = re.findall(padrao_telefone, texto)
-# Imprimir os números de telefone encontrados
-for numero in numeros_telefone:
-    print("Número de telefone encontrado:", numero)
