@@ -32,6 +32,7 @@ while True:
             print("------------------Funcionário Excluido com sucesso------------------") 
             os.system('pause')
             os.system('cls')
+
         elif menu_fun == 3:
             print("------------------FUNÇÃO PAGAMENTO------------------")
             nome_fun = input("Digite o nome do funcionário: ")
@@ -40,15 +41,19 @@ while True:
             pagamento_fun = Pagamento(nome_fun,matricula_fun,salario)
             os.system('pause')
             os.system('cls')
+
         elif menu_fun == 0:
             break
+
     elif menu == 2:
+
         print("---------------SEÇÃO DE CLIENTE---------------")
         print("[1]-Cadastro Cliente\n[2]-Deposito\n[3]-Saque\n[4]-Saldo\n[0]-Sair")
-        
+
         menu_client = int(input("Digite a função desejada: "))
         
         if menu_client == 1:
+            
             nome_client = input("Digite o nome do cliente: ")
             cpf_client = input("Digite o CPF do cliente: ")
             idade_client = int(input("Digite a sua idade: "))
@@ -64,6 +69,7 @@ while True:
             os.system('cls')
         
         elif menu_client == 2: 
+
             print("---------------FUNÇÃO DE DEPOSITO---------------")
             valor = float(input("Digite o valor para depositar: "))
             client_dados.deposito(valor)
@@ -71,6 +77,7 @@ while True:
             os.system('cls')
         
         elif menu_client == 3: 
+
             print("---------------FUNÇÃO DE SAQUE---------------")
             senha = input("Digite a sua senha para entrar")
             valor = float(input("Digite o valor para saque: "))
@@ -79,6 +86,7 @@ while True:
             os.system('cls')
         
         elif menu_client == 4:
+
             print("---------------FUNÇÃO DE SALDO---------------")
             senha = input("Digite a sua senha para entrar")
             os.system('pause')
