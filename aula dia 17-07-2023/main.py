@@ -45,6 +45,7 @@ while True:
     elif menu == 2:
         print("---------------SEÇÃO DE CLIENTE---------------")
         print("[1]-Cadastro Cliente\n[2]-Deposito\n[3]-Saque\n[4]-Saldo\n[0]-Sair")
+        
         menu_client = int(input("Digite a função desejada: "))
         
         if menu_client == 1:
@@ -82,7 +83,9 @@ while True:
             senha = input("Digite a sua senha para entrar")
             os.system('pause')
             os.system('cls')
-
+        
+        elif menu_client == 0:
+            break
 
 
 
