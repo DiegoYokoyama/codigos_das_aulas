@@ -43,7 +43,7 @@ class client(Banco):
        print('Depositado com sucesso')
 
     
-    def saldo(self,senha)
+    def saldo(self,senha):
         if senha == self.__senha:
             print("Seu saldo: R$",self.__saldo)
         else: 
