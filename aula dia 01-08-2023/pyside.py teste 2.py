@@ -5,7 +5,7 @@ import sys
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Meu programa")
+        self.setWindowTitle("exercicio 1")
         self.setFixedSize(600,400)
         self.lbl = QLabel('Hellou World !')
         font = self.lbl.font()
