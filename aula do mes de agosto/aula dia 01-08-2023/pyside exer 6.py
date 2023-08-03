@@ -22,9 +22,12 @@ class MainWindow(QMainWindow):
         self.button.clicked.connect(self.calcular_metros)
 
     def calcular_metros(self):
-        num1 = float(self.input1.text())
-        soma = num1*100
-        self.result_label.setText(f"converter metros para centímetros: {soma}")
+        try:
+            num1 = float(self.input1.text())
+            soma = num1*100
+            self.result_label.setText(f"converter metros para centímetros: {soma}")
+        except ValueError:
+            print( 'Digite apenas numeros sem spaço ou letras')
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

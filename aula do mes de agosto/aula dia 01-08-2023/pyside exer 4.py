@@ -28,11 +28,13 @@ class MainWindow(QMainWindow):
         self.button.clicked.connect(self.calcular_soma)
 
     def calcular_soma(self):
-        num1 = float(self.input1.text())
-        num2 = float(self.input2.text())
-        soma = num1 + num2
-        self.result_label.setText(f"A soma é: {soma}")
-
+        try:
+            num1 = float(self.input1.text())
+            num2 = float(self.input2.text())
+            soma = num1 + num2
+            self.result_label.setText(f"A soma é: {soma}")
+        except ValueError:
+            print( 'Digite apenas numeros sem spaço ou letras')
 if __name__ == "__main__":
     app = QApplication(sys.argv)
 

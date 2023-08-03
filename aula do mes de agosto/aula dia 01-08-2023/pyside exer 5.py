@@ -41,12 +41,15 @@ class MainWindow(QMainWindow):
         self.button.clicked.connect(self.calcular_div)
 
     def calcular_div(self):
-        num1 = float(self.input1.text())
-        num2 = float(self.input2.text())
-        num3 = float(self.input3.text())
-        num4 = float(self.input4.text())
-        div = (num1 + num2 + num3 + num4)/4
-        self.result_label.setText(f"divisão: {div}")
+        try:
+            num1 = float(self.input1.text())
+            num2 = float(self.input2.text())
+            num3 = float(self.input3.text())
+            num4 = float(self.input4.text())
+            div = (num1 + num2 + num3 + num4)/4
+            self.result_label.setText(f"divisão: {div}")
+        except ValueError:
+            print( 'Digite apenas numeros sem spaço ou letras')
 
 
 if __name__ == "__main__":

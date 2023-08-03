@@ -22,10 +22,13 @@ class MainWindow(QMainWindow):
         self.button.clicked.connect(self.calcular_area_do_quadrado)
 
     def calcular_area_do_quadrado(self):
-        num1 = float(self.input1.text())
-        area = num1**2
-        area_dobro = area*2
-        self.result_label.setText(f"area do quadrado : {area}\n o dobro da area: {area_dobro}")
+        try:
+            num1 = float(self.input1.text())
+            area = num1**2
+            area_dobro = area*2
+            self.result_label.setText(f"area do quadrado : {area}\n o dobro da area: {area_dobro}")
+        except ValueError:
+            print( 'Digite apenas numeros sem spaço ou letras')
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
