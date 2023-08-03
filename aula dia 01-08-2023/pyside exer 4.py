@@ -28,8 +28,8 @@ class MainWindow(QMainWindow):
         self.button.clicked.connect(self.calcular_soma)
 
     def calcular_soma(self):
-        num1 = int(self.input1.text())
-        num2 = int(self.input2.text())
+        num1 = float(self.input1.text())
+        num2 = float(self.input2.text())
         soma = num1 + num2
         self.result_label.setText(f"A soma é: {soma}")
 

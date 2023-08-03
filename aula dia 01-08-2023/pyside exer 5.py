@@ -41,10 +41,10 @@ class MainWindow(QMainWindow):
         self.button.clicked.connect(self.calcular_div)
 
     def calcular_div(self):
-        num1 = int(self.input1.text())
-        num2 = int(self.input2.text())
-        num3 = int(self.input3.text())
-        num4 = int(self.input4.text())
+        num1 = float(self.input1.text())
+        num2 = float(self.input2.text())
+        num3 = float(self.input3.text())
+        num4 = float(self.input4.text())
         div = (num1 + num2 + num3 + num4)/4
         self.result_label.setText(f"A soma é: {div}")
 

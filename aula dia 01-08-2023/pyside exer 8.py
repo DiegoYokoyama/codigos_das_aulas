@@ -22,7 +22,7 @@ class MainWindow(QMainWindow):
         self.button.clicked.connect(self.calcular_area_do_quadrado)
 
     def calcular_area_do_quadrado(self):
-        num1 = int(self.input1.text())
+        num1 = float(self.input1.text())
         area = num1**2
         area_dobro = area*2
         self.result_label.setText(f"area do quadrado : {area}\n o dobro da area: {area_dobro}")

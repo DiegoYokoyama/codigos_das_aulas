@@ -22,7 +22,7 @@ class MainWindow(QMainWindow):
         self.button.clicked.connect(self.calcular_raio_circulo)
 
     def calcular_raio_circulo(self):
-        num1 = int(self.input1.text())
+        num1 = float(self.input1.text())
         area = ((num1**2)*3.14)
         self.result_label.setText(f"area circulo: {area}")
 
