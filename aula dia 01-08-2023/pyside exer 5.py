@@ -46,7 +46,7 @@ class MainWindow(QMainWindow):
         num3 = float(self.input3.text())
         num4 = float(self.input4.text())
         div = (num1 + num2 + num3 + num4)/4
-        self.result_label.setText(f"A soma é: {div}")
+        self.result_label.setText(f"divisão: {div}")
 
 
 if __name__ == "__main__":
