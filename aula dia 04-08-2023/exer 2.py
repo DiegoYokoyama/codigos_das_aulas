@@ -35,7 +35,8 @@ class MainWindow(QMainWindow):
     
     def masculino(self):
         self.label5=QLabel("masculino",self)
-        self.label5.setGeometry(5,500,490,20)
+        self.label5.setGeometry(5, 500, 490, 30)
+        
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
