@@ -5,6 +5,9 @@ from PySide6.QtWidgets import QApplication, QMainWindow, QLabel, QCheckBox, QVBo
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
+        self.ck = QCheckBox("masculino")
+        self.ck2 = QCheckBox("feminino")
+        
 
         self.setWindowTitle("cadastro")
         self.setGeometry(150, 150, 500, 500)
@@ -32,11 +35,32 @@ class MainWindow(QMainWindow):
 
         self.button = QPushButton("cadastro", self)
         self.button.setGeometry(5, 460, 490, 20)
-    
-    def masculino(self):
-        self.label5=QLabel("masculino",self)
-        self.label5.setGeometry(5, 500, 490, 30)
+
+        layout = QVBoxLayout()
+
+        layout.addWidget(self.ck)
+        layout.addWidget(self.ck2)
         
+        container = QWidget()
+        container.setLayout(layout)
+        
+        self.setCentralWidget(container)
+        self.ck.stateChanged.connect(self.state)
+        self.ck2.stateChanged.connect(self.state2)
+        
+    def state(self, s):
+        print(s)
+        if s == 2:
+            self.ck2.setChecked(False)
+        else:
+            self.ck2.setChecked(True)
+            
+    def state2(self, s):
+        print(s)
+        if s == 2:
+            self.ck.setChecked(False)
+        else:
+            self.ck.setChecked(True)
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
