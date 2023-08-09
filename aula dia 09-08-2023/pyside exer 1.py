@@ -26,7 +26,7 @@ class SecondaryWindow(QDialog):
         
         layout = QVBoxLayout()
         
-        label = QLabel('foto 2')
+        label = QLabel('foto 2 ')
         layout.addWidget(label)
         
         image_label = QLabel(self)
