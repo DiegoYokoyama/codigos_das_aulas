@@ -26,16 +26,17 @@ class SecondaryWindow(QDialog):
         
         layout = QVBoxLayout()
         
-        label = QLabel('riolu')
+        label = QLabel('foto 2')
         layout.addWidget(label)
         
         image_label = QLabel(self)
-        pixmap = QPixmap('riolu.jpg')
+        pixmap = QPixmap('foto 2.jpg')
         image_label.setPixmap(pixmap)
         layout.addWidget(image_label)
         
         close_button = QPushButton('Fechar', self)
         close_button.clicked.connect(self.close)
+        layout.addWidget(close_button)
         
         self.setLayout(layout)
         
