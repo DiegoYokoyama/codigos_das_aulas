@@ -27,7 +27,7 @@ class MainWindow(QMainWindow):
         #self.cb.InsertAfterCurrent  # Insere novos itens após o item atualmente selecionado
         #self.cb.InsertBeforeCurrent  # Insere novos itens antes do item atualmente selecionado
         #self.cb.InsertAlphabetically  # Insere novos itens na ordem alfabética da lista
-        #self.setCentralWidget(self.cb)  # Define o QComboBox como widget central
+        #elf.setCentralWidget(self.cb)  # Define o QComboBox como widget central
 
     def mundanca_indice(self, i):
         print(i)  # Imprime o índice selecionado
