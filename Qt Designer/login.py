@@ -102,8 +102,8 @@ class Ui_MainWindow(object):
     # retranslateUi
 
 app = QApplication(sys.argv)
-w = QMainWindow()
+window = QMainWindow()
 ui = Ui_MainWindow()
-ui.setupUi(w)
-w.show()
+ui.setupUi(window)
+window.show()
 app.exec()
