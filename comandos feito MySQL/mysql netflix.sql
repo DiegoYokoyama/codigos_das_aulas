@@ -33,4 +33,5 @@ tipo varchar (50) not null,
 primary key (titulo));
 
 rename table video2 to video; #vai alterar o nome da tabela
-alter table video change temporada2 temporada int  #vai alterar dentro da tabela que vc escolheu
+alter table video change temporada2 temporada int;  #vai alterar dentro da tabela que vc escolheu
+alter table video add column id_cliente int; #vai adicionar mais uma coluna na tabela 
