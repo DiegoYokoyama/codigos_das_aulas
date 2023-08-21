@@ -71,14 +71,14 @@ border-top-right-radius:10px;</string>
            </spacer>
           </item>
           <item>
-           <widget class="QLineEdit" name="lineEdit">
+           <widget class="QLineEdit" name="txt_texto">
             <property name="placeholderText">
              <string>selecione aqui</string>
             </property>
            </widget>
           </item>
           <item>
-           <spacer name="verticalSpacer">
+           <spacer name="var">
             <property name="orientation">
              <enum>Qt::Vertical</enum>
             </property>

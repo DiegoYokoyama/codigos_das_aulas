@@ -1,8 +1,7 @@
-
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'salvar_pasta.ui'
+## Form generated from reading UI file 'salvar_arquivo.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.5.2
 ##
@@ -61,13 +60,13 @@ class Ui_MainWindow(object):
         self.verticalLayout.addItem(self.verticalSpacer_2)
 
         self.txt_texto = QLineEdit(self.frame_teste_2)
-        self.txt_texto.setObjectName(u"texto")
+        self.txt_texto.setObjectName(u"txt_texto")
 
         self.verticalLayout.addWidget(self.txt_texto)
 
-        self.verticalSpacer = QSpacerItem(8, 36, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.var = QSpacerItem(8, 36, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
-        self.verticalLayout.addItem(self.verticalSpacer)
+        self.verticalLayout.addItem(self.var)
 
         self.btn_organizar = QPushButton(self.frame_teste_2)
         self.btn_organizar.setObjectName(u"btn_organizar")
@@ -91,7 +90,7 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.lbl_pasta.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><img src=\":/emai/icon arquivo.png\"/></p></body></html>", None))
         self.btn_ok.setText(QCoreApplication.translate("MainWindow", u"ok", None))
-        self.lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"selecione aqui", None))
+        self.txt_texto.setPlaceholderText(QCoreApplication.translate("MainWindow", u"selecione aqui", None))
         self.btn_organizar.setText(QCoreApplication.translate("MainWindow", u"organizar", None))
     # retranslateUi
 

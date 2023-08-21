@@ -23,6 +23,6 @@ class MainWindow (QMainWindow, Ui_MainWindow):
 app = QApplication(sys.argv)
 window = QMainWindow()
 ui = Ui_MainWindow()
-ui.setupUi(window)
+ui.setupUi(MainWindow)
 window.show()
 app.exec()        
