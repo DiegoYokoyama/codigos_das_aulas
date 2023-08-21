@@ -1,4 +1,4 @@
-from login import Ui_MainWindow
+'''from login import Ui_MainWindow
 from PySide6.QtWidgets import (QApplication, QFrame, QLabel, QLineEdit,
     QMainWindow, QSizePolicy, QVBoxLayout, QWidget)
 import sys
@@ -14,4 +14,4 @@ window = QMainWindow()
 ui = Ui_MainWindow()
 ui.setupUi(window)
 window.show()
-app.exec()
+app.exec()'''
