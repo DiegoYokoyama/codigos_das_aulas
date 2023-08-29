@@ -96,10 +96,10 @@ class Consultorio(QMainWindow):
             QMessageBox.critical(self, "Erro de Entrada", "Certifique-se de que os campos foram preenchidos corretamente.")
 
     def adicionar_paciente_na_fila(self, paciente):
-        if paciente.data_nascimento <= datetime.now() - timedelta(days=365*60):
-            self.fila_espera.insert(0, paciente)  # Paciente com mais de 60 anos no início da fila
+        if self.data_nascimento_input <= datetime.now() - timedelta(days=365*60):
+            self.fila_espera.insert(0, paciente)  
         else:
-            self.fila_espera.append(paciente)  # Paciente no final da fila
+            self.fila_espera.append(paciente)  
 
         self.atualizar_fila()
 
