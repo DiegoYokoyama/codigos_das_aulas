@@ -42,12 +42,12 @@ class Consultorio(QMainWindow):
         self.txt_email.setPlaceholderText("Email")
         self.layout.addWidget(self.txt_email)
 
-        self.lbl_cb_sexo = QLabel("sexo:")
+        self.lbl_sexo = QLabel("sexo:")
         self.cb_genero = QComboBox()
         self.cb_genero.addItem("Outro")
         self.cb_genero.addItem("Masculino")
         self.cb_genero.addItem("Feminino")
-        self.layout.addWidget(self.lbl_cb_sexo)
+        self.layout.addWidget(self.lbl_sexo)
         self.layout.addWidget(self.cb_genero)
 
         self.lbl_data_nascimento = QLabel("Data de nascimento:")
@@ -84,10 +84,10 @@ class Consultorio(QMainWindow):
             data_nascimento = self.txt_data_nascimento.date().toPython()
             pcd = self.ck_pcd.isChecked()
 
-            hora_chegada = datetime.now() #tentar arrumar o horario 
+            hora_chegada = datetime.now() # 
 
             paciente = Paciente(nome, telefone, email, genero, data_nascimento, pcd)
-            paciente.chegada_fila = hora_chegada  #tentar arrumar o horario
+            paciente.chegada_fila = hora_chegada  #
 
             self.adicionar_paciente_na_fila(paciente)
 
@@ -112,11 +112,11 @@ class Consultorio(QMainWindow):
         self.atualizar_fila()
 
     def atualizar_fila(self):
-        self.fila_espera.sort(key=lambda paciente: (paciente.pcd, paciente.data_nascimento, paciente.genero, paciente.chegada_fila,))
+        self.fila_espera.sort(key=lambda paciente: (paciente.pcd, paciente.data_nascimento, paciente.genero, paciente.chegada_fila))
         self.txtb_exibir_fila.clear()
-        for idx, paciente in enumerate(self.fila_espera):
-            tempo_espera = datetime.now() - paciente.chegada_fila
-            self.txtb_exibir_fila.append(f"{idx+1}. {paciente.nome} - {'PCD' if paciente.pcd else 'Não PCD'} data de nascimento: {paciente.data_nascimento} - genero: {paciente.genero} - Tempo de Espera: {tempo_espera}")
+        for contador_fila, paciente in enumerate(self.fila_espera):
+            #tempo_espera = datetime.now() - paciente.chegada_fila
+            self.txtb_exibir_fila.append(f"{contador_fila+1}. {paciente.nome} - {'PCD' if paciente.pcd else 'Não PCD'} - Data De Nascimento: {paciente.data_nascimento} - Genero: {paciente.genero} - Horario do cadastro {paciente.chegada_fila}") # - Tempo de Espera: {tempo_espera}")
             
     def chamar_proximo_paciente(self):
         if self.fila_espera:
