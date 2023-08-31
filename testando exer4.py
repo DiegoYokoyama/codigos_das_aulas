@@ -20,15 +20,15 @@ class Consultorio(QMainWindow):
         super().__init__()
 
         self.setWindowTitle("Consultório Médico")
-        self.setGeometry(100, 100, 400, 500)
+        self.setGeometry(100, 100, 1000, 500)
 
         self.central_widget = QWidget()
         self.setCentralWidget(self.central_widget)
 
         self.layout = QVBoxLayout()
 
-        self.info_label = QLabel("Digite os dados do paciente:")
-        self.layout.addWidget(self.info_label)
+        self.lbl_dados_paciente = QLabel("Digite os dados do paciente:")
+        self.layout.addWidget(self.lbl_dados_paciente)
 
         self.txt_nome = QLineEdit()
         self.txt_nome.setPlaceholderText("Nome")
@@ -42,15 +42,19 @@ class Consultorio(QMainWindow):
         self.txt_email.setPlaceholderText("Email")
         self.layout.addWidget(self.txt_email)
 
+        self.lbl_cb_sexo = QLabel("sexo:")
         self.cb_genero = QComboBox()
         self.cb_genero.addItem("Outro")
         self.cb_genero.addItem("Masculino")
         self.cb_genero.addItem("Feminino")
+        self.layout.addWidget(self.lbl_cb_sexo)
         self.layout.addWidget(self.cb_genero)
 
+        self.lbl_data_nascimento = QLabel("Data de nascimento:")
         self.txt_data_nascimento = QDateEdit()
         self.txt_data_nascimento.setDisplayFormat("dd/MM/yyyy")
         self.txt_data_nascimento.setCalendarPopup(True)
+        self.layout.addWidget(self.lbl_data_nascimento)
         self.layout.addWidget(self.txt_data_nascimento)
 
         self.ck_pcd = QCheckBox("Pessoa com Deficiência")
