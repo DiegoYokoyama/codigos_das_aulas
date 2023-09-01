@@ -1,145 +1,187 @@
 import sys
-from PySide6.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QWidget, QLabel, QLineEdit, QPushButton, QTextBrowser, QCheckBox, QComboBox, QDateEdit, QMessageBox
-from datetime import datetime, timedelta
+from PySide6.QtCore import QTimer
+from PySide6.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QLabel, QLineEdit, QPushButton, QCheckBox, QTextEdit, QTabWidget, QMessageBox
 
-class Paciente:
-    def __init__(self, nome, telefone, email, genero, data_nascimento, pcd=False):
-        self.nome = nome
-        self.telefone = telefone
-        self.email = email
-        self.genero = genero
-        self.data_nascimento = data_nascimento
-        self.pcd = pcd
-        self.chegada_fila = datetime.now()
-    
-    def __str__(self):
-        return self.nome
+class User:
+    def __init__(self, first_name, last_name, birth_date, address, gender, is_pcd, is_priority):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.birth_date = birth_date
+        self.address = address
+        self.gender = gender
+        self.is_pcd = is_pcd
+        self.is_priority = is_priority
 
-class Consultorio(QMainWindow):
+class HospitalQueueApp(QMainWindow):
     def __init__(self):
         super().__init__()
+        self.setWindowTitle("Sistema de Fila de Hospital")
+        self.setGeometry(100, 100, 500, 500)
 
-        self.setWindowTitle("Consultório Médico")
-        self.setGeometry(100, 100, 1000, 500)
-
-        self.central_widget = QWidget()
+        self.central_widget = QWidget(self)
         self.setCentralWidget(self.central_widget)
+        
+        self.layout = QVBoxLayout(self.central_widget)
 
-        self.layout = QVBoxLayout()
+        self.tab_widget = QTabWidget()
 
-        self.lbl_dados_paciente = QLabel("Digite os dados do paciente:")
-        self.layout.addWidget(self.lbl_dados_paciente)
+        self.tab_queue = QWidget()
+        self.tab_processing = QWidget()
+        self.tab_attended = QWidget()
 
-        self.txt_nome = QLineEdit()
-        self.txt_nome.setPlaceholderText("Nome")
-        self.layout.addWidget(self.txt_nome)
+        self.tab_widget.addTab(self.tab_queue, "Fila de Atendimento")
+        self.tab_widget.addTab(self.tab_processing, "Em Atendimento")
+        self.tab_widget.addTab(self.tab_attended, "Já Atendidos")
 
-        self.txt_telefone = QLineEdit()
-        self.txt_telefone.setPlaceholderText("Telefone")
-        self.layout.addWidget(self.txt_telefone)
+        self.layout.addWidget(self.tab_widget)
 
-        self.txt_email = QLineEdit()
-        self.txt_email.setPlaceholderText("Email")
-        self.layout.addWidget(self.txt_email)
+        self.init_queue_tab()
+        self.init_processing_tab()
+        self.init_attended_tab()
 
-        self.lbl_sexo = QLabel("sexo:")
-        self.cb_genero = QComboBox()
-        self.cb_genero.addItem("Outro")
-        self.cb_genero.addItem("Masculino")
-        self.cb_genero.addItem("Feminino")
-        self.layout.addWidget(self.lbl_sexo)
-        self.layout.addWidget(self.cb_genero)
+        self.queue = []
+        self.processing_user = None
+        self.attended_users = []
+        self.timer = None
 
-        self.lbl_data_nascimento = QLabel("Data de nascimento:")
-        self.txt_data_nascimento = QDateEdit()
-        self.txt_data_nascimento.setDisplayFormat("dd/MM/yyyy")
-        self.txt_data_nascimento.setCalendarPopup(True)
-        self.layout.addWidget(self.lbl_data_nascimento)
-        self.layout.addWidget(self.txt_data_nascimento)
+    def init_queue_tab(self):
+        self.first_name_label = QLabel("Nome:")
+        self.first_name_input = QLineEdit()
 
-        self.ck_pcd = QCheckBox("Pessoa com Deficiência")
-        self.layout.addWidget(self.ck_pcd)
+        self.last_name_label = QLabel("Sobrenome:")
+        self.last_name_input = QLineEdit()
 
-        self.btn_cadastrar_botao = QPushButton("Cadastrar Paciente")
-        self.btn_cadastrar_botao.clicked.connect(self.cadastrar_paciente)
-        self.layout.addWidget(self.btn_cadastrar_botao)
+        self.birth_date_label = QLabel("Data de Nascimento (DD/MM/AAAA):")
+        self.birth_date_input = QLineEdit()
 
-        self.btn_chamar_proximo_botao = QPushButton("Chamar Próximo")
-        self.btn_chamar_proximo_botao.clicked.connect(self.chamar_proximo_paciente)
-        self.layout.addWidget(self.btn_chamar_proximo_botao)
+        self.address_label = QLabel("Endereço:")
+        self.address_input = QLineEdit()
 
-        self.txtb_exibir_fila = QTextBrowser()
-        self.layout.addWidget(self.txtb_exibir_fila)
+        self.gender_label = QLabel("Gênero:")
+        self.gender_input = QLineEdit()
 
-        self.central_widget.setLayout(self.layout)
+        self.pcd_checkbox = QCheckBox("Pessoa com Deficiência (PCD)")
+        self.priority_checkbox = QCheckBox("Prioridade (Mais de 60 anos)")
 
-        self.fila_espera = []
+        self.enqueue_button = QPushButton("Entrar na Fila")
+        self.enqueue_button.clicked.connect(self.enqueue_user)
 
-    def cadastrar_paciente(self):
-        try:
+        self.queue_text = QTextEdit()
+        self.queue_text.setReadOnly(True)
 
-            nome = self.txt_nome.text()
-            telefone = self.txt_telefone.text()
-            email = self.txt_email.text()
-            genero = self.cb_genero.currentText()
-            data_nascimento = self.txt_data_nascimento.date().toPython()
-            pcd = self.ck_pcd.isChecked()
+        layout = QVBoxLayout(self.tab_queue)
+        layout.addWidget(self.first_name_label)
+        layout.addWidget(self.first_name_input)
+        layout.addWidget(self.last_name_label)
+        layout.addWidget(self.last_name_input)
+        layout.addWidget(self.birth_date_label)
+        layout.addWidget(self.birth_date_input)
+        layout.addWidget(self.address_label)
+        layout.addWidget(self.address_input)
+        layout.addWidget(self.gender_label)
+        layout.addWidget(self.gender_input)
+        layout.addWidget(self.pcd_checkbox)
+        layout.addWidget(self.priority_checkbox)
+        layout.addWidget(self.enqueue_button)
+        layout.addWidget(self.queue_text)
 
-            hora_chegada = datetime.now() 
+    def init_processing_tab(self):
+        self.processing_text = QTextEdit()
+        self.processing_text.setReadOnly(True)
 
-            paciente = Paciente(nome, telefone, email, genero, data_nascimento, pcd)
-            paciente.chegada_fila = hora_chegada  
+        layout = QVBoxLayout(self.tab_processing)
+        layout.addWidget(self.processing_text)
 
-            self.adicionar_paciente_na_fila(paciente)
+    def init_attended_tab(self):
+        self.attended_text = QTextEdit()
+        self.attended_text.setReadOnly(True)
 
-            self.txtb_exibir_fila.append(f"Paciente cadastrado: {paciente}")
+        layout = QVBoxLayout(self.tab_attended)
+        layout.addWidget(self.attended_text)
 
-            self.txt_nome.clear()
-            self.txt_telefone.clear()
-            self.txt_email.clear()
-            self.cb_genero.setCurrentIndex(0)
-            self.txt_data_nascimento.setDate(datetime.now().date())
-            self.ck_pcd.setChecked(False)
+    def enqueue_user(self):
+        first_name = self.first_name_input.text()
+        last_name = self.last_name_input.text()
+        birth_date = self.birth_date_input.text()
+        address = self.address_input.text()
+        gender = self.gender_input.text()
+        is_pcd = self.pcd_checkbox.isChecked()
+        is_priority = self.priority_checkbox.isChecked()
 
-        except ValueError:
-            QMessageBox.critical(self, "Erro de Entrada", "Certifique-se de que os campos foram preenchidos corretamente.")
+        if not (first_name and last_name and birth_date and address and gender):
+            QMessageBox.warning(self, "Erro", "Todos os campos devem ser preenchidos.")
+            return
+        QMessageBox.information(self, "Sucesso", "Cadastro realizado com sucesso!")
+        user = User(first_name, last_name, birth_date, address, gender, is_pcd, is_priority)
 
-    def adicionar_paciente_na_fila(self, paciente):
-        if paciente.pcd and paciente.data_nascimento <= (datetime.now() - timedelta(days=365*60)).date():
-            # Paciente PCD com mais de 60 anos
-            self.fila_espera.insert(0, paciente)
-        elif paciente.pcd:
-            # Outro paciente PCD
-            self.fila_espera.append(paciente)
-        elif paciente.data_nascimento <= (datetime.now() - timedelta(days=365*60)).date():
-            # Paciente com mais de 60 anos (não PCD)
-            self.fila_espera.insert(0, paciente)
+        self.queue.append(user)
+        self.update_queue_text()
+        self.clear_fields()
+
+        if not self.timer:
+            self.process_next_user()
+
+    def process_next_user(self):
+        if self.queue:
+            self.processing_user = self.queue.pop(0)
+            self.update_queue_text()
+            self.update_processing_text()
+            self.timer = self.start_timer()
         else:
-            # Outros pacientes
-            self.fila_espera.append(paciente)
+            self.processing_text.clear()
+            self.processing_text.append("Nenhum usuário em atendimento.")
+            self.queue_text.append("A fila está vazia.")
 
-        self.atualizar_fila()
+    def start_timer(self):
+        return QTimer.singleShot(40000, self.finish_processing)
 
+    def finish_processing(self):
+        self.attended_users.append(self.processing_user)
+        self.processing_user = None
+        self.timer = None
+        self.queue_text.append("Usuário anterior foi atendido. Próximo usuário será atendido em 40 segundos.")
+        self.process_next_user()
+        self.update_attended_text()
 
-    def atualizar_fila(self):
-        self.fila_espera.sort(key=lambda paciente: (paciente.pcd, paciente.data_nascimento, paciente.genero, paciente.chegada_fila))
-        self.txtb_exibir_fila.clear()
-        for contador_fila, paciente in enumerate(self.fila_espera):
-            #tempo_espera = datetime.now() - paciente.chegada_fila
-            self.txtb_exibir_fila.append(f"{contador_fila+1}. {paciente.nome} - {'PCD' if paciente.pcd else 'Não PCD'} - Data De Nascimento: {paciente.data_nascimento} - Genero: {paciente.genero} - Horario do cadastro {paciente.chegada_fila}") # - Tempo de Espera: {tempo_espera}")
-            
-    def chamar_proximo_paciente(self):
-        if self.fila_espera:
-            paciente_chamado = self.fila_espera.pop(0)
-            self.txtb_exibir_fila.clear()
-            self.txtb_exibir_fila.append(f"Chamando: {paciente_chamado.nome}")
-            self.atualizar_fila()
+    def update_queue_text(self):
+        self.queue_text.clear()
+        self.queue_text.append("Fila de Atendimento:")
+        for idx, user in enumerate(self.queue, start=1):
+            self.queue_text.append(f"{idx}. {user.first_name} {user.last_name} - Prioridade: {user.is_priority}")
+        
+        if not self.queue:
+            self.queue_text.append("A fila está vazia.")
+
+    def update_processing_text(self):
+        self.processing_text.clear()
+        if self.processing_user:
+            self.processing_text.append("Usuário em atendimento:")
+            self.processing_text.append(f"Nome: {self.processing_user.first_name} {self.processing_user.last_name}")
+            self.processing_text.append(f"Data de Nascimento: {self.processing_user.birth_date}")
+            self.processing_text.append(f"Endereço: {self.processing_user.address}")
+            self.processing_text.append(f"Gênero: {self.processing_user.gender}")
         else:
-            self.txtb_exibir_fila.clear()
-            self.txtb_exibir_fila.append("A fila está vazia.")
+            self.processing_text.append("Nenhum usuário em atendimento.")
+
+    def update_attended_text(self):
+        self.attended_text.clear()
+        self.attended_text.append("Usuários Atendidos:")
+        for idx, user in enumerate(self.attended_users, start=1):
+            self.attended_text.append(f"{idx}. {user.first_name} {user.last_name}")
+        if not self.attended_users:
+            self.attended_text.append("Nenhum usuário foi atendido ainda.")
+
+    def clear_fields(self):
+        self.first_name_input.clear()
+        self.last_name_input.clear()
+        self.birth_date_input.clear()
+        self.address_input.clear()
+        self.gender_input.clear()
+        self.pcd_checkbox.setChecked(False)
+        self.priority_checkbox.setChecked(False)
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    consultorio = Consultorio()
-    consultorio.show()
+    window = HospitalQueueApp()
+    window.show()
     sys.exit(app.exec())
