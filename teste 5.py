@@ -13,32 +13,32 @@ class CadastroWindow(QWidget):
         self.mercado = mercado
         self.setWindowTitle('Cadastro de Produtos')
         self.layout = QVBoxLayout()
-        self.nome_label = QLabel('Nome do Produto:')
-        self.nome_input = QLineEdit()
-        self.preco_label = QLabel('Preço Unitário:')
-        self.preco_input = QLineEdit()
-        self.quantidade_label = QLabel('Quantidade em Estoque:')
-        self.quantidade_input = QLineEdit()
-        self.cadastrar_button = QPushButton('Cadastrar')
-        self.cadastrar_button.clicked.connect(self.cadastrar_produto)
-        self.layout.addWidget(self.nome_label)
-        self.layout.addWidget(self.nome_input)
-        self.layout.addWidget(self.preco_label)
-        self.layout.addWidget(self.preco_input)
-        self.layout.addWidget(self.quantidade_label)
-        self.layout.addWidget(self.quantidade_input)
-        self.layout.addWidget(self.cadastrar_button)
+        self.lbl_nome = QLabel('Nome do Produto:')
+        self.txt_nome = QLineEdit()
+        self.lbl_preco = QLabel('Preço Unitário:')
+        self.txt_preco = QLineEdit()
+        self.lbl_quantidade = QLabel('Quantidade em Estoque:')
+        self.txt_quantidade = QLineEdit()
+        self.btn_cadastrar_button = QPushButton('Cadastrar')
+        self.btn_cadastrar_button.clicked.connect(self.cadastrar_produto)
+        self.layout.addWidget(self.lbl_nome)
+        self.layout.addWidget(self.txt_nome)
+        self.layout.addWidget(self.lbl_preco)
+        self.layout.addWidget(self.txt_preco)
+        self.layout.addWidget(self.lbl_quantidade)
+        self.layout.addWidget(self.txt_quantidade)
+        self.layout.addWidget(self.btn_cadastrar_button)
         self.setLayout(self.layout)
 
     def cadastrar_produto(self):
-        nome = self.nome_input.text()
-        preco = float(self.preco_input.text())
-        quantidade = int(self.quantidade_input.text())
-        produto = Produto(nome, preco, quantidade)
-        self.mercado.produtos.append(produto)
-        self.nome_input.clear()
-        self.preco_input.clear()
-        self.quantidade_input.clear()
+        nome = self.txt_nome.text()
+        preco = float(self.txt_preco.text())
+        quantidade = int(self.txt_quantidade.text())
+        produtos = Produto(nome, preco, quantidade)
+        self.mercado.produtos.append(produtos)
+        self.txt_nome.clear()
+        self.txt_preco.clear()
+        self.txt_quantidade.clear()
         QMessageBox.information(self, 'Cadastro', 'Produto cadastrado com sucesso!')
 
 class EstoqueWindow(QWidget):
@@ -47,15 +47,15 @@ class EstoqueWindow(QWidget):
         self.mercado = mercado
         self.setWindowTitle('Estoque de Produtos')
         self.layout = QVBoxLayout()
-        self.lista_produtos = QListWidget()
+        self.list_produtos = QListWidget()
         self.atualizar_lista_produtos()
-        self.layout.addWidget(self.lista_produtos)
+        self.layout.addWidget(self.list_produtos)
         self.setLayout(self.layout)
 
     def atualizar_lista_produtos(self):
-        self.lista_produtos.clear()
+        self.list_produtos.clear()
         for produto in self.mercado.produtos:
-            self.lista_produtos.addItem(f'{produto.nome} - Preço: R${produto.preco_unitario:.2f} - Estoque: {produto.quantidade}')
+            self.list_produtos.addItem(f'{produto.nome} - Preço: R${produto.preco_unitario:.2f} - Estoque: {produto.quantidade}')
 
 class VendasWindow(QWidget):
     def __init__(self, mercado):
@@ -66,15 +66,15 @@ class VendasWindow(QWidget):
         self.lista_produtos = QComboBox()
         self.atualizar_lista_produtos()
         self.layout.addWidget(self.lista_produtos)
-        self.quantidade_label = QLabel('Quantidade Vendida:')
-        self.quantidade_input = QLineEdit()
-        self.calcular_button = QPushButton('Calcular Valor')
-        self.calcular_button.clicked.connect(self.calcular_valor)
-        self.valor_label = QLabel('Valor Total:')
-        self.layout.addWidget(self.quantidade_label)
-        self.layout.addWidget(self.quantidade_input)
-        self.layout.addWidget(self.calcular_button)
-        self.layout.addWidget(self.valor_label)
+        self.lbl_quantidade = QLabel('Quantidade Vendida:')
+        self.txt_quantidade = QLineEdit()
+        self.btn_calcular_button = QPushButton('Calcular Valor')
+        self.btn_calcular_button.clicked.connect(self.calcular_valor)
+        self.lbl_valor = QLabel('Valor Total:')
+        self.layout.addWidget(self.lbl_quantidade)
+        self.layout.addWidget(self.txt_quantidade)
+        self.layout.addWidget(self.btn_calcular_button)
+        self.layout.addWidget(self.lbl_valor)
         self.setLayout(self.layout)
 
     def atualizar_lista_produtos(self):
@@ -84,16 +84,16 @@ class VendasWindow(QWidget):
 
     def calcular_valor(self):
         produto_index = self.lista_produtos.currentIndex()
-        quantidade_vendida = int(self.quantidade_input.text())
+        quantidade_vendida = int(self.txt_quantidade.text())
         if produto_index >= 0:
             produto = self.mercado.produtos[produto_index]
             if quantidade_vendida > 0 and quantidade_vendida <= produto.quantidade:
                 valor_total = produto.preco_unitario * quantidade_vendida
-                self.valor_label.setText(f'Valor Total: R${valor_total:.2f}')
+                self.lbl_valor.setText(f'Valor Total: R${valor_total:.2f}')
                 produto.quantidade -= quantidade_vendida
                 self.atualizar_lista_produtos()
                 QMessageBox.information(self, 'Venda', f'Venda realizada com sucesso! Total: R${valor_total:.2f}')
-                self.quantidade_input.clear()
+                self.txt_quantidade.clear()
             else:
                 QMessageBox.warning(self, 'Venda', 'Quantidade em estoque insuficiente ou quantidade inválida.')
         else:
@@ -110,17 +110,17 @@ class MercadoApp(QMainWindow):
         self.setCentralWidget(self.central_widget)
 
         self.layout = QVBoxLayout()
-        self.cadastro_button = QPushButton('Cadastro')
-        self.estoque_button = QPushButton('Estoque')
-        self.vendas_button = QPushButton('Vendas')
+        self.btn_cadastro_button = QPushButton('Cadastro')
+        self.btn_estoque_button = QPushButton('Estoque')
+        self.btn_vendas_button = QPushButton('Vendas')
 
-        self.cadastro_button.clicked.connect(self.mostrar_cadastro)
-        self.estoque_button.clicked.connect(self.mostrar_estoque)
-        self.vendas_button.clicked.connect(self.mostrar_vendas)
+        self.btn_cadastro_button.clicked.connect(self.mostrar_cadastro)
+        self.btn_estoque_button.clicked.connect(self.mostrar_estoque)
+        self.btn_vendas_button.clicked.connect(self.mostrar_vendas)
 
-        self.layout.addWidget(self.cadastro_button)
-        self.layout.addWidget(self.estoque_button)
-        self.layout.addWidget(self.vendas_button)
+        self.layout.addWidget(self.btn_cadastro_button)
+        self.layout.addWidget(self.btn_estoque_button)
+        self.layout.addWidget(self.btn_vendas_button)
 
         self.central_widget.setLayout(self.layout)
 
