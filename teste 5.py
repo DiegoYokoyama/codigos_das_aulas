@@ -32,13 +32,36 @@ class CadastroWindow(QWidget):
 
     def cadastrar_produto(self):
         nome = self.txt_nome.text()
-        preco = float(self.txt_preco.text())
-        quantidade = int(self.txt_quantidade.text())
+        preco = self.txt_preco.text()
+        quantidade = self.txt_quantidade.text()
+
+        if not nome.isalpha():
+            QMessageBox.warning(self, 'Cadastro', 'O nome do produto deve conter apenas letras e caracteres válidos.')
+            return
+        
+        try:
+            quantidade = int(quantidade)
+        except ValueError:
+            QMessageBox.warning(self, 'Cadastro', 'A quantidade deve ser um número inteiro válido.')
+            return
+        
+        try:
+            preco = float(preco)
+        except ValueError:
+            QMessageBox.warning(self, 'Cadastro', 'O preço deve ser um número válido.')
+            return
+
+        for produto in self.mercado.produtos:
+            if produto.nome == nome:
+                QMessageBox.warning(self, 'Cadastro', 'Produto com o mesmo nome já existe.')
+                return
+            
         produtos = Produto(nome, preco, quantidade)
         self.mercado.produtos.append(produtos)
         self.txt_nome.clear()
         self.txt_preco.clear()
         self.txt_quantidade.clear()
+
         QMessageBox.information(self, 'Cadastro', 'Produto cadastrado com sucesso!')
 
 class EstoqueWindow(QWidget):
@@ -63,9 +86,9 @@ class VendasWindow(QWidget):
         self.mercado = mercado
         self.setWindowTitle('Realizar Venda')
         self.layout = QVBoxLayout()
-        self.lista_produtos = QComboBox()
+        self.cb_produtos = QComboBox()
         self.atualizar_lista_produtos()
-        self.layout.addWidget(self.lista_produtos)
+        self.layout.addWidget(self.cb_produtos)
         self.lbl_quantidade = QLabel('Quantidade Vendida:')
         self.txt_quantidade = QLineEdit()
         self.btn_calcular_button = QPushButton('Calcular Valor')
@@ -78,12 +101,12 @@ class VendasWindow(QWidget):
         self.setLayout(self.layout)
 
     def atualizar_lista_produtos(self):
-        self.lista_produtos.clear()
+        self.cb_produtos.clear()
         for produto in self.mercado.produtos:
-            self.lista_produtos.addItem(f'{produto.nome}')
+            self.cb_produtos.addItem(f'{produto.nome}')
 
     def calcular_valor(self):
-        produto_index = self.lista_produtos.currentIndex()
+        produto_index = self.cb_produtos.currentIndex()
         quantidade_vendida = int(self.txt_quantidade.text())
         if produto_index >= 0:
             produto = self.mercado.produtos[produto_index]
