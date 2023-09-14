@@ -7,9 +7,10 @@ destino varchar (50) not null,
 fone varchar (15) not null
 );
 
-insert into cliente (nome,destino,fone) values ('diego', 'sao paulo', '123456789');
-insert into cliente (nome,destino,fone) values ('evandro', 'campo grande', '987654');
-insert into cliente (nome,destino,fone) values ('felipe', 'sao paulo', '85854854');
+insert into cliente (nome,destino,fone) values 
+('diego', 'sao paulo', '123456789'),
+('evandro', 'campo grande', '987654'),
+('felipe', 'sao paulo', '85854854');
 
 select * from cliente where destino = 'sao paulo';
 
