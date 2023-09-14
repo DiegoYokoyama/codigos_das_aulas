@@ -111,3 +111,11 @@ select * from ms where municipio like 'c%';
 select * from ms where municipio like '_r%';
 select * from ms where municipio like '%r_';
 select municipio as c from ms;
+
+select * from ms where vitima = (select max(vitima) from ms);
+select * from ms where vitima = (select min(vitima) from ms);
+select count(vitima) from ms;
+select avg(vitima) from ms;
+select * from ms where municipio like 'c%';
+select * from ms where municipio like 'd%';
+select * from ms where municipio like 'e%';
