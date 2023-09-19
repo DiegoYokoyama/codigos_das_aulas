@@ -3,7 +3,7 @@ create database vendas;
 use vendas;
 
 CREATE TABLE CIDADE (
-    CODCID   INTEGER NOT NULL,
+    CODCID   smallint NOT NULL,
     NOMECID  VARCHAR(60),
     UF       CHAR(2)
 );
@@ -38,7 +38,7 @@ CREATE TABLE PRODUTO (
 );
 
 CREATE TABLE SETOR (
-    CODSETOR   INTEGER NOT NULL,
+    CODSETOR   smallint NOT NULL,
     NOMESETOR  VARCHAR(50)
 );
 
@@ -209,3 +209,16 @@ ALTER TABLE PEDIDO ADD CONSTRAINT FK_PEDIDO_1 FOREIGN KEY (CODCLI) REFERENCES CL
 ALTER TABLE PEDIDO ADD CONSTRAINT FK_PEDIDO_2 FOREIGN KEY (CODVEND) REFERENCES VENDEDOR (CODVEND);
 ALTER TABLE VENDEDOR ADD CONSTRAINT FK_VENDEDOR_1 FOREIGN KEY (CODSETOR) REFERENCES SETOR (CODSETOR);
 
+select * from CIDADE;
+select * from CLIENTE;
+select * from PRODUTO;
+select * from SETOR;
+select * from PEDIDO;
+select max(SALARIO) from VENDEDOR;
+select NOMEVEND from VENDEDOR where SALARIO =(select max(SALARIO) from VENDEDOR);
+select min(SALARIO) from VENDEDOR;
+select NOMEVEND from VENDEDOR where SALARIO =(select min(SALARIO) from VENDEDOR);
+select * from ITEMPEDIDO where QTDADE = (select max(QTDADE) from ITEMPEDIDO);
+select * from ITEMPEDIDO where QTDADE = (select min(QTDADE) from ITEMPEDIDO);
+select * from PRODUTO where VALOR_UN = (select min(VALOR_UN) from PRODUTO);
+select * from PRODUTO where VALOR_UN = (select max(VALOR_UN) from PRODUTO);
