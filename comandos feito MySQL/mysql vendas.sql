@@ -222,3 +222,6 @@ select * from ITEMPEDIDO where QTDADE = (select max(QTDADE) from ITEMPEDIDO);
 select * from ITEMPEDIDO where QTDADE = (select min(QTDADE) from ITEMPEDIDO);
 select * from PRODUTO where VALOR_UN = (select min(VALOR_UN) from PRODUTO);
 select * from PRODUTO where VALOR_UN = (select max(VALOR_UN) from PRODUTO);
+select NOMEVEND from VENDEDOR where CODSETOR = (select CODSETOR FROM SETOR where NOMESETOR = 'ferramentas');
+select CODCLI from CLIENTE where NOME = 'Estevan Pereira Cardoso' ;
+select NUMPED from PEDIDO where CODCLI = 5;
