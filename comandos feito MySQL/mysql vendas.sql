@@ -225,3 +225,33 @@ select * from PRODUTO where VALOR_UN = (select max(VALOR_UN) from PRODUTO);
 select NOMEVEND from VENDEDOR where CODSETOR = (select CODSETOR FROM SETOR where NOMESETOR = 'ferramentas');
 select CODCLI from CLIENTE where NOME = 'Estevan Pereira Cardoso' ;
 select NUMPED from PEDIDO where CODCLI = 5;
+
+#1. Quantas cidades têm cadastradas no banco? R:15
+
+#2.	Quantos Clientes tem cadastrado no banco? R:15
+
+#3.	Quantos produtos têm no banco? R: 20
+
+#4.	Quantos setores têm no banco? R: 6
+
+#5.	Quantos pedidos têm no banco? R: 15
+
+#6.	Qual o maior salário dos vendedores? R: R$ 1500,00
+
+#7.	Quem possui o maior salário? R: Jader De Amaro
+
+#8.	Qual o menor salário dos vendedores? R: R$ 400,00
+
+#9.	Quem possui o menor salário? R: Ronei Araújio Batista e James Chen Vilareal
+
+#10.	Qual pedido teve a maior venda em quantidade? R: Pedido 15 teve 20 quantidades
+
+#11.	Qual pedido teve a menor venda em quantidade? R: Pedido 1,1,2,3,3,5,6,7,8,10,10,10,13,13,13,14,14,15 teve 1 quantidade
+
+#12.	Qual o produto mais barato? R: luva de borracha preço R$2,00
+
+#13.	Qual o produto mais caro? R: cortador de grama R$800,00
+
+#14.	Quantos vendedores existem no setor de ferramentas? R: 4 pessoas
+
+#15.	Quantos pedidos o cliente Estevan Pereira Cardoso fez? R: 2 pedidos
