@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>EditarProduto</class>
- <widget class="QMainWindow" name="EditarProduto">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>864</width>
-    <height>726</height>
+    <width>1111</width>
+    <height>808</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>EditarProduto</string>
+   <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="frame_central">
-   <layout class="QVBoxLayout" name="verticalLayout_6">
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
      <widget class="QFrame" name="layout_editar_produto">
       <property name="frameShape">
@@ -23,7 +23,19 @@
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout_2">
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <widget class="QLabel" name="lbl_editar_produto">
+         <property name="font">
+          <font>
+           <pointsize>15</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Pagina de Editar Produto</string>
+         </property>
+        </widget>
+       </item>
        <item>
         <widget class="QFrame" name="layout_produto">
          <property name="frameShape">
@@ -33,13 +45,6 @@
           <enum>QFrame::Raised</enum>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_3">
-          <item>
-           <widget class="QLabel" name="lbl_produto_nome">
-            <property name="text">
-             <string>Nome do Produto</string>
-            </property>
-           </widget>
-          </item>
           <item>
            <widget class="QLineEdit" name="inp_produto">
             <property name="inputMask">
