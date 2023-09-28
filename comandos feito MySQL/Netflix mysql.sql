@@ -33,7 +33,7 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL';
 
 USE Netflix;
-
+drop database Netflix;
 --
 -- Dumping data for table actor
 --
@@ -45,7 +45,143 @@ Admission_Date_Time timestamp,
 primary key (actor_ID)
 );
 
+create table direccion(
+dir_ID int auto_increment,
+Street varchar (100) not null,
+IDK varchar (50),
+City varchar (100) not null,
+DDD int (3) not null,
+numero varchar (5),
+Phone varchar (20),
+Date_Time timestamp,
+primary key (dir_ID)
+);
 
+create table categoria(
+Cat_ID int auto_increment,
+Genre varchar (50) not null,
+Date_Time timestamp,
+primary key (Cat_ID)
+);
+
+create table ciudad(
+City_ID int auto_increment,
+Name Varchar (50) not null,
+Code_Area int (3) not null,
+Registration_Date timestamp,
+primary key (City_ID)
+);
+
+create table pais(
+County_ID int auto_increment,
+Name varchar (50) not null,
+Registration_Date_Time timestamp,
+primary key (County_ID)
+);
+
+create table pelicula(
+Movie_ID int auto_increment,
+Movie_Name varchar (100) not null,
+Description text (400) not null,
+Launch_year int (4) not null,
+Number_Off_Movie int not null,
+Season varchar (10),
+Cast int not null,
+Rating float (4) not null,
+Ranking int not null,
+Cust float not null,
+Age_Grupe varchar (100) not null,
+Test varchar (100) not null,
+Lauch_Date timestamp,
+primary key (Movie_ID)
+);
+
+create table cliente(
+User_ID int auto_increment,
+Fk_U int not null,
+Name varchar (50) not null,
+Last_Name varchar (50) not null,
+Email varchar (100) not null,
+age int (3) not null,
+Days_Logged int (1) not null,
+Registrate_Date timestamp,
+Last_online timestamp,
+primary key (User_ID)
+);
+
+create table pelicula_actor(
+Actor_ID int (4) not null,
+Movie_ID int (4) not null,
+Participation_Time timestamp
+);
+
+create table pelicula_categoria(
+movie_ID int auto_increment,
+cat_ID int not null,
+date_time timestamp,
+primary key (movie_ID)
+);
+
+create table inventario(
+inventory_ID int auto_increment,
+FK_u1 int not null,
+FK_u2 int not null,
+date_time timestamp,
+primary key (inventory_ID)
+);
+
+create table idioma(
+language_ID int auto_increment,
+language_name varchar (10),
+date_time timestamp,
+primary key (language_ID)
+);
+
+create table pago(
+Pago_ID int auto_increment,
+FK_u1 int not null,
+fk_u2 int not null,
+number int,
+grade float (4) not null,
+Date_entrace timestamp,
+Date_end timestamp,
+primary key (Pago_ID)
+);
+
+create table alquiler(
+Alquiler_ID int auto_increment,
+date_compra timestamp,
+fk_u1 int not null,
+fk_u2 int not null,
+date_initial timestamp,
+season int not null,
+date_end timestamp,
+primary key (alquiler_ID)
+);
+
+create table empleado(
+empleado_ID int auto_increment,
+Name varchar (50) not null,
+Last_Name varchar (50) not null,
+FK_lingua int (6)not null,
+job varchar (10),
+Email varchar (50) not null,
+fk_u2 int (2) not null,
+fk_u3 int (2) not null,
+First_Name varchar (50) not null,
+job_2 varchar (10),
+date_admission timestamp,
+primary key (empleado_ID)
+);
+
+create table almacen(
+Almacen_ID int auto_increment,
+fk_u1 int not null,
+fk_u2 int not null,
+date_admission_almacen timestamp,
+primary key (almacen_ID)
+);
+ 
 SET AUTOCOMMIT=0;
 INSERT INTO actor VALUES (1,'PENELOPE','GUINESS','2006-02-15 04:34:33'),
 (2,'NICK','WAHLBERG','2006-02-15 04:34:33'),
@@ -251,20 +387,6 @@ COMMIT;
 SELECT * FROM actor;
 --
 -- Dumping data for table address
---
-create table direccion(
-dir_ID int auto_increment,
-Street varchar (100) not null,
-IDK varchar (50),
-City varchar (100) not null,
-DDD int (3) not null,
-numero varchar (5),
-Phone varchar (20),
-Date_Time timestamp,
-primary key (dir_ID)
-);
-describe direccion;
-drop table direccion;
 
 SET AUTOCOMMIT=0;
 INSERT INTO direccion VALUES (1,'47 MySakila Drive',NULL,'Alberta',300,'','','2014-09-25 22:30:27'),
@@ -316,13 +438,6 @@ COMMIT;
 --
 -- Dumping data for table category
 --
-use Netflix;
-create table categoria(
-Cat_ID int auto_increment,
-Genre varchar (50) not null,
-Date_Time timestamp,
-primary key (Cat_ID)
-);
 
 SET AUTOCOMMIT=0;
 INSERT INTO categoria VALUES (1,'Action','2006-02-15 04:46:27'),
@@ -346,13 +461,6 @@ COMMIT;
 --
 -- Dumping data for table city
 --
-create table ciudad(
-City_ID int auto_increment,
-Name Varchar (50) not null,
-Code_Area int (3) not null,
-Registration_Date timestamp,
-primary key (City_ID)
-);
 
 SET AUTOCOMMIT=0;
 INSERT INTO ciudad VALUES (1,'A Corua (La Corua)',87,'2006-02-15 04:45:25'),
@@ -960,12 +1068,6 @@ COMMIT;
 --
 -- Dumping data for table country
 --
-create table pais(
-County_ID int auto_increment,
-Name varchar (50) not null,
-Registration_Date_Time timestamp,
-primary key (County_ID)
-);
 
 SET AUTOCOMMIT=0;
 INSERT INTO pais VALUES (1,'Afghanistan','2006-02-15 04:44:00'),
@@ -1082,21 +1184,6 @@ COMMIT;
 --
 -- Dumping data for table customer
 --
-use Netflix;
-
-create table cliente(
-User_ID int auto_increment,
-Fk_U int not null,
-Name varchar (50) not null,
-Last_Name varchar (50) not null,
-Email varchar (100) not null,
-age int (3) not null,
-Days_Logged int (1) not null,
-Registrate_Date timestamp,
-Last_online timestamp,
-primary key (User_ID)
-);
-
 
 
 SET AUTOCOMMIT=0;
@@ -1711,23 +1798,7 @@ CREATE TRIGGER customer_create_date BEFORE INSERT ON cliente;
 --
 -- Dumping data for table film
 --
-create table pelicula(
-Movie_ID int auto_increment,
-Movie_Name varchar (100) not null,
-Description text (400) not null,
-Launch_year int (4) not null,
-Number_Off_Movie int not null,
-Season varchar (10),
-Cast int not null,
-Rating float (4) not null,
-Ranking int not null,
-Cust float not null,
-Age_Grupe varchar (100) not null,
-Test varchar (100) not null,
-Lauch_Date timestamp,
-primary key (Movie_ID)
-);
-drop table pelicula;
+
 SET AUTOCOMMIT=0;
 INSERT INTO pelicula VALUES (1,'ACADEMY DINOSAUR','A Epic Drama of a Feminist And a Mad Scientist who must Battle a Teacher in The Canadian Rockies',2006,1,NULL,6,'0.99',86,'20.99','PG','Deleted Scenes,Behind the Scenes','2006-02-15 05:03:42'),
 (2,'ACE GOLDFINGER','A Astounding Epistle of a Database Administrator And a Explorer who must Find a Car in Ancient China',2006,1,NULL,3,'4.99',48,'12.99','G','Trailers,Deleted Scenes','2006-02-15 05:03:42'),
@@ -2734,12 +2805,7 @@ COMMIT;
 --
 -- Dumping data for table film_actor
 --
-create table pelicula_actor(
-Actor_ID int (4) not null,
-Movie_ID int (4) not null,
-Participation_Time timestamp
-);
-drop table pelicula_Actor;
+
 SET AUTOCOMMIT=0;
 INSERT INTO pelicula_actor VALUES (1,1,'2006-02-15 05:05:03'),
 (1,23,'2006-02-15 05:05:03'),
@@ -8208,12 +8274,6 @@ COMMIT;
 --
 -- Dumping data for table film_category
 --
-create table pelicula_categoria(
-movie_ID int auto_increment,
-cat_ID int not null,
-date_time timestamp,
-primary key (movie_ID)
-);
 
 
 SET AUTOCOMMIT=0;
@@ -9222,14 +9282,6 @@ COMMIT;
 --
 -- Dumping data for table inventory
 --
-create table inventario(
-inventory_ID int auto_increment,
-FK1 int not null,
-FK2 int not null,
-date_time timestamp,
-primary key (inventory_ID)
-);
-
 
 SET AUTOCOMMIT=0;
 INSERT INTO inventario VALUES (1,1,1,'2006-02-15 05:09:17'),
@@ -13818,12 +13870,6 @@ COMMIT;
 --
 -- Dumping data for table language
 --
-create table idioma(
-language_ID int auto_increment,
-language_name varchar (10),
-date_time timestamp,
-primary key (language_ID)
-);
 
 
 SET AUTOCOMMIT=0;
@@ -13838,17 +13884,8 @@ COMMIT;
 --
 -- Dumping data for table payment
 --
-create table pago(
-Pago_ID int auto_increment,
-FK_1 int not null,
-fk_2 int not null,
-number int,
-grade float (4) not null,
-Date_entrace timestamp,
-Date_end timestamp,
-primary key (Pago_ID)
-);
-drop table pago;
+
+
 SET AUTOCOMMIT=0;
 INSERT INTO pago VALUES (1,1,1,76,'2.99','2005-05-25 11:30:37','2006-02-15 22:12:30'),
 (2,1,1,573,'0.99','2005-05-28 10:35:23','2006-02-15 22:12:30'),
@@ -29912,16 +29949,6 @@ CREATE TRIGGER payment_date BEFORE INSERT ON pago
 --
 -- Dumping data for table rental
 --
-create table alquiler(
-Alquiler_ID int auto_increment,
-date_compra timestamp,
-fk_1 int not null,
-fk_2 int not null,
-date_initial timestamp,
-season int not null,
-date_end timestamp,
-primary key (alquiler_ID)
-);
 
 SET AUTOCOMMIT=0;
 INSERT INTO alquiler VALUES (1,'2005-05-24 22:53:30',367,130,'2005-05-26 22:04:30',1,'2006-02-15 21:30:53'),
@@ -45988,20 +46015,6 @@ SET AUTOCOMMIT=0;
 --
 -- Dumping data for table `staff`
 --
-create table empleado(
-empleado_ID int auto_increment,
-Name varchar (50) not null,
-Last_Name varchar (50) not null,
-FK_lingua int (6)not null,
-job varchar (10),
-Email varchar (50) not null,
-fk_2 int (2) not null,
-fk_3 int (2) not null,
-First_Name varchar (50) not null,
-job_2 varchar (10),
-date_admission timestamp,
-primary key (empleado_ID)
-);
 
 INSERT INTO `empleado` VALUES (1,'Mike','Hillyer',3,NULL, 'mike@sakilastaff.com', 2, 1, 'Mike', NULL, '2006-02-15 03:57:16'),
 (2,'Jon','Stephens',4,NULL,'Jon.Stephens@sakilastaff.com',2,1,'Jon',NULL,'2006-02-15 03:57:16'),
@@ -46013,13 +46026,6 @@ COMMIT;
 --
 -- Dumping data for table store
 --
-create table almacen(
-Almacen_ID int auto_increment,
-fk_1 int not null,
-fk_2 int not null,
-date_admission_almacen timestamp,
-primary key (almacen_ID)
-);
 
 SET AUTOCOMMIT=0;
 INSERT INTO almacen VALUES (1,5,1,'2006-02-15 04:57:12'),
