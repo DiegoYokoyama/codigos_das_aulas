@@ -9,7 +9,7 @@ Id_estado int not null,
 Id_cidade int not null,
 Id_sexo int not null,
 Id_nacionalidade int not null,
-Fone varchar (10)not null,
+Fone varchar (14)not null,
 Id_raca int not null,
 Id_escolaridade int not null,
 constraint foreign key (Id_escolaridade) references Escolaridade(Id_escolaridade),
@@ -58,103 +58,132 @@ Escolaridade varchar (50) not null,
 primary key (Id_escolaridade)
 );
 
-INSERT INTO Estado VALUES
+INSERT INTO Estado (Estado) VALUES
+('Acre'),
+('Alagoas'),
+('Amapá'),
+('Amazonas'),
+('Bahia'),
+('Ceará'),
+('Distrito Federal'),
+('Espírito Santo'),
+('Goiás'),
+('Maranhão'),
+('Mato Grosso'),
+('Mato Grosso do Sul'),
+('Minas Gerais'),
+('Pará'),
+('Paraíba'),
+('Paraná'),
+('Pernambuco'),
+('Piauí'),
+('Rio de Janeiro'),
+('Rio Grande do Norte'),
+('Rio Grande do Sul'),
+('Rondônia'),
+('Roraima'),
+('Santa Catarina'),
+('São Paulo'),
+('Sergipe'),
+('Tocantins');
 
-(1, 'Rio Branco'),
-(2, 'Cruzeiro do Sul'),
-(3, 'Sena Madureira'),
-(4, 'Feijó'),
-(5, 'Tarauacá'),
+INSERT INTO Cidade (Cidade) VALUES
 
-(6, 'Maceió'),
-(7, 'Arapiraca'),
-(8, 'Palmeira dos Índios'),
-(9, 'Rio Largo'),
-(10, 'Santana do Ipanema'),
+('Rio Branco'),
+('Cruzeiro do Sul'),
+('Sena Madureira'),
+('Feijó'),
+('Tarauacá'),
 
-(11, 'Macapá'),
-(12, 'Santana'),
-(13, 'Laranjal do Jari'),
-(14, 'Oiapoque'),
-(15, 'Porto Grande'),
+('Maceió'),
+('Arapiraca'),
+('Palmeira dos Índios'),
+('Rio Largo'),
+('Santana do Ipanema'),
 
-(16, 'Manaus'),
-(17, 'Parintis'),
-(18, 'Itacoatiara'),
-(19, 'Manacapuru'),
-(20, 'Coari'),
+('Macapá'),
+('Santana'),
+('Laranjal do Jari'),
+('Oiapoque'),
+('Porto Grande'),
 
-(21, 'Salvador'),
-(22, 'Feira de Santana'),
-(23, 'Vitoria da Conquista'),
-(24, 'Itabna'),
-(25, 'Camaçari'),
+('Manaus'),
+('Parintis'),
+('Itacoatiara'),
+('Manacapuru'),
+('Coari'),
 
-(26, 'Fortaleza'),
-(27, 'Crato'),
-(28, 'Itapipoca'),
-(29, 'Aracati'),
-(30, 'Sobral'),
+('Salvador'),
+('Feira de Santana'),
+('Vitoria da Conquista'),
+('Itabna'),
+('Camaçari'),
 
-(31, 'Taguatinga'),
-(32, 'Samambaia'),
-(33, 'Guará'),
-(34, 'Águas Claras'),
-(35, 'Celiândia'),
+('Fortaleza'),
+('Crato'),
+('Itapipoca'),
+('Aracati'),
+('Sobral'),
 
-(36, 'Vitória'),
-(37, 'Linhares'),
-(38, 'Guarapari'),
-(39, 'Cachoeiro do Itapemirim'),
-(40, 'Vilha Velha'),
+('Taguatinga'),
+('Samambaia'),
+('Guará'),
+('Águas Claras'),
+('Celiândia'),
 
-(41, 'Goiânia'),
-(42, 'Nerópolis'),
-(43, 'Aparecida de Goiânia'),
-(44, 'Anápolis'),
-(45, 'Rio Verde'),
+('Vitória'),
+('Linhares'),
+('Guarapari'),
+('Cachoeiro do Itapemirim'),
+('Vilha Velha'),
 
-(46, 'São Luís'),
-(47, 'Imperatriz'),
-(48, 'Timon'),
-(49, 'Caxias'),
-(50, 'Codó'),
+('Goiânia'),
+('Nerópolis'),
+('Aparecida de Goiânia'),
+('Anápolis'),
+('Rio Verde'),
 
-(51, 'Cuiabá'),
-(52, 'Cuiabá'),
-(53, 'Rondonópolis'),
-(54, 'Sinop'),
-(55, 'Tangará da Serra'),
+('São Luís'),
+('Imperatriz'),
+('Timon'),
+('Caxias'),
+('Codó'),
 
-(56, 'Campo Grande'),
-(57, 'Dourados'),
-(58, 'Três Lagoas'),
-(59, 'Corumbá'),
-(60, 'Ponta Porã'),
+('Cuiabá'),
+('Cuiabá'),
+('Rondonópolis'),
+('Sinop'),
+('Tangará da Serra'),
 
-(61, 'Belo Horizonte'),
-(62, 'Uberlândia'),
-(63, 'Contagem'),
-(64, 'Betim'),
-(65, 'Juiz de Fora'),
+('Campo Grande'),
+('Dourados'),
+('Três Lagoas'),
+('Corumbá'),
+('Ponta Porã'),
 
-(66, 'Belém'),
-(67, 'Ananindeua'),
-(68, 'Santarém'),
-(69, 'Marabá'),
-(70, 'Castanhal'),
+('Belo Horizonte'),
+('Uberlândia'),
+('Contagem'),
+('Betim'),
+('Juiz de Fora'),
 
-(71, 'João Pessoa'),
-(72, 'Campina Grande'),
-(73, 'Santa Rita'),
-(74, 'Patos'),
-(75, 'Bayeux'),
+('Belém'),
+('Ananindeua'),
+('Santarém'),
+('Marabá'),
+('Castanhal'),
 
-(76, 'Curitiba'),
-(77, 'Londrina'),
-(78, 'Maringá'),
-(79, 'Ponta Grossa'),
-(80, 'Cascavel'),
+('João Pessoa'),
+('Campina Grande'),
+('Santa Rita'),
+('Patos'),
+('Bayeux'),
+
+('Curitiba'),
+('Londrina'),
+('Maringá'),
+('Ponta Grossa'),
+('Cascavel'),
 
 ('Recife'),
 ('Jaboatão dos Guararapes'),
@@ -216,27 +245,29 @@ INSERT INTO Estado VALUES
 ('Itabaiana'),
 ('São Cristóvão'),
 
-('Palmas')
-('Araguaína')
-( 'Gurupi')
-('Porto Nacional')
-('Paraíso do Tocantins'
-);
+('Palmas'),
+('Araguaína'),
+( 'Gurupi'),
+('Porto Nacional'),
+('Paraíso do Tocantins');
 
+INSERT INTO Sexo(Sexo) VALUES
+('Masculino'),
+('Feminino'),
+('Outros');
 
-
-INSERT INTO Nacionalidade  VALUES
+INSERT INTO Nacionalidade(Nacionalidade)  VALUES
 ('Brasileira'),
 ('Estrangeira');
 
-INSERT INTO Raca  VALUES
+INSERT INTO Raca(Raca)  VALUES
 ('Branca'),
 ('Parda'),
 ('Negra'),
 ('Amarela'),
 ('Indígena');
 
-INSERT INTO Escolaridade  VALUES
+INSERT INTO Escolaridade(Escolaridade)  VALUES
 ('Sem Educação Formal'),
 ('Ensino Fundamental Incompleto'),
 ('Ensino Fundamental Completo'),
@@ -246,24 +277,34 @@ INSERT INTO Escolaridade  VALUES
 ('Ensino Superior Completo'),
 ('Pós-Graduação');
 
+select * from Cliente;
+
 Insert into Cliente Values
-('936.986.040-19','Lyesun','28.504.147-2',
-('370.526.650-00','Logan','21.996.890-1',
-('988.661.470-60','Nagan','24.205.778-0',
-('823.958.250-85','Lobiohad','13.464.092-5',
-('402.471.580-11','Linarliu','39.432.671-4',
-('529.683.460-75','Delwuava','49.752.216-0',
-('785.118.170-42','Belegon','34.105.282-6',
-('827.008.430-10','Flovigurz','30.648.637-4',
-('758.427.920-10','Kikyodub','21.671.756-5',
-('942.357.520-06','Duboku','45.195.120-7',
-('843.669.310-87','Wawoborn','10.333.170-0',
-('570.869.690-79','Hahlougu','35.977.340-0',
-('454.065.450-00','Haerak','33.253.382-7',
-('336.166.880-86','Aranlu','23.064.005-9',
-('417.873.520-99','Noguek','35.784.566-3',
-('055.701.840-40','Vointizao','19.945.377-9',
-('104.733.430-53','Fialu','21.783.080-8',
-('635.810.620-11','Rubug','42.337.084-4',
-('049.167.120-21','Brodbu','42.067.602-8',
-('880.713.770-40','Zaorga','33.504.365-3',
+('936.986.040-19','Lyesun','28.504.147-2',1,1,3,2,'(42)3765-2078',1,1),
+('370.526.650-00','Logan','21.996.890-1',2,2,2,1,'(63)2847-3187',5,2),
+('988.661.470-60','Nagan','24.205.778-0',3,3,2,1,'(81)2562-1167',2,3),
+('823.958.250-85','Lobiohad','13.464.092-5',4,4,1,1,'(28)3634-5497',2,4),
+('402.471.580-11','Linarliu','39.432.671-4',5,5,1,2,'(84)2607-1497',3,5),
+('529.683.460-75','Delwuava','49.752.216-0',6,6,2,2,'(49)3336-8087',5,6),
+('785.118.170-42','Belegon','34.105.282-6',7,7,3,1,'(98)2338-0349',4,7),
+('827.008.430-10','Flovigurz','30.648.637-4',8,8,2,1,'(89)2013-0881',5,8),
+('758.427.920-10','Kikyodub','21.671.756-5',9,9,1,1,'(79)2067-0187',3,6),
+('942.357.520-06','Duboku','45.195.120-7',10,10,3,1,'(82)3585-3671',4,7),
+('843.669.310-87','Wawoborn','10.333.170-0',11,11,1,2,'(28)3274-4739',3,4),
+('570.869.690-79','Hahlougu','35.977.340-0',12,12,1,2,'(93)2167-4027',3,3),
+('454.065.450-00','Haerak','33.253.382-7',13,13,2,2,'(71)3093-2922',2,2),
+('336.166.880-86','Aranlu','23.064.005-9',14,14,3,1,'(89)3046-0682',2,1),
+('417.873.520-99','Noguek','35.784.566-3',15,15,2,2,'(65)3309-3640',1,3),
+('055.701.840-40','Vointizao','19.945.377-9',16,16,3,1,'(34)3535-5682',1,4),
+('104.733.430-53','Fialu','21.783.080-8',17,17,1,2,'(93)2825-7294',1,6),
+('635.810.620-11','Rubug','42.337.084-4',18,18,2,1,'(82)2352-1706',2,7),
+('049.167.120-21','Brodbu','42.067.602-8',19,19,2,1,'(79)3214-3064',3,8),
+('880.713.770-40','Zaorga','33.504.365-3',20,20,3,2,'(87)2676-1285',4,2);
+
+select Cliente.Nome,Cidade.Cidade from Cliente INNER JOIN Cidade On Cliente.Id_cidade = Cidade.Id_cidade;
+select Cliente.Nome,Estado.Estado from Cliente INNER JOIN Estado On Cliente.Id_estado = Estado.Id_estado;
+select Cliente.Nome,Cliente.CPF,Raca.Raca from Cliente INNER JOIN Raca On Cliente.Id_raca = Raca.Id_raca;
+select Cliente.Nome,Nacionalidade.Nacionalidade from Cliente INNER JOIN Nacionalidade On Cliente.Id_Nacionalidade = Nacionalidade.Id_Nacionalidade;
+select Cliente.Nome,Escolaridade.Escolaridade from Cliente INNER JOIN Escolaridade On Cliente.Id_Escolaridade = Escolaridade.Id_Escolaridade;
+select Cliente.Nome,Cidade.Cidade,Estado.Estado from Cliente INNER JOIN Cidade On Cliente.Id_Cidade = Cidade.Id_Cidade INNER JOIN Estado ON Cliente.Id_Estado = Estado.Id_Estado;
+select Cliente.Nome,Cidade.Cidade,Estado.Estado,Cliente.Fone,Cliente.RG,Sexo.Sexo,Nacionalidade.Nacionalidade,Raca.Raca,Escolaridade.Escolaridade from Cliente INNER JOIN Cidade On Cliente.Id_Cidade = Cidade.Id_Cidade INNER JOIN Estado ON Cliente.Id_Estado = Estado.Id_Estado INNER JOIN Sexo on Cliente.Id_Sexo = Sexo.Id_Sexo INNER JOIN Nacionalidade On Cliente.Id_Nacionalidade = Nacionalidade.Id_Nacionalidade INNER JOIN Raca On Cliente.Id_raca = Raca.Id_raca INNER JOIN Escolaridade On Cliente.Id_Escolaridade = Escolaridade.Id_Escolaridade;
