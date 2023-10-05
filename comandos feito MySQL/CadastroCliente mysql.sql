@@ -329,4 +329,6 @@ UPDATE Escolaridade SET Escolaridade = 'Ensino Avançado' WHERE Escolaridade lik
 
 select * from Cidade;
 select * from Estado;
+select * from Raca;
+delete from Cidade where Cidade = 'Rio Branco';
 set SQL_SAFE_UPDATES = 0;
