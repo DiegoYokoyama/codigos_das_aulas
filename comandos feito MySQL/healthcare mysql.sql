@@ -702,8 +702,18 @@ Insert into Available_Date values (	1	,	"	2017 - 2017	"	),
 
 set SQL_SAFE_UPDATES = 0;
 
-select Countries.country_name, Global_Rank.global_rank from Countries inner join Global_Rank on Countries.country_id = Global_Rank.country_id; #Mostra o nome dos países com o ranking global deles.
-select Countries.country_name, Healthcare_Prices.prices from Countries inner join Healthcare_Prices on Countries.country_id = Healthcare_Prices.country_id; #Mostra o nome dos paises com o preço do atendimento médico
-update Available_Date set dates = "2018 - 2018" where dates = "	2017 - 2017	"; #Muda as datas de 2017 pra 2018
-delete from Countries where country_name = "sri lanka"; #Deleta o país sri lanka
-select country_name from Countries order by country_name; #Ordem alfabética
+select Countries.country_name, Global_Rank.global_rank from Countries inner join Global_Rank on Countries.country_id = Global_Rank.country_id; 
+#Mostra o nome dos países com o ranking global deles.
+
+select Countries.country_name, Healthcare_Prices.prices from Countries inner join Healthcare_Prices on Countries.country_id = Healthcare_Prices.country_id; 
+#Mostra o nome dos paises com o preço do atendimento médico
+
+update Available_Date set dates = "2018 - 2018" where dates = "	2017 - 2017	"; 
+#Muda as datas de 2017 pra 2018
+select * from Available_Date;
+
+delete from Countries where country_name = "sri lanka"; 
+#Deleta o país sri lanka
+
+select country_name from Countries order by country_name; 
+#Ordem alfabética
