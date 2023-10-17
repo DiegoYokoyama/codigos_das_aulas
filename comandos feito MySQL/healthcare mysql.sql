@@ -703,6 +703,7 @@ Insert into Available_Date values (	1	,	"	2017 - 2017	"	),
 set SQL_SAFE_UPDATES = 0;
 
 select Countries.country_name, Global_Rank.global_rank from Countries inner join Global_Rank on Countries.country_id = Global_Rank.country_id; 
+
 #Mostra o nome dos países com o ranking global deles.
 
 select Countries.country_name, Healthcare_Prices.prices from Countries inner join Healthcare_Prices on Countries.country_id = Healthcare_Prices.country_id; 
@@ -717,3 +718,8 @@ delete from Countries where country_name = "sri lanka";
 
 select country_name from Countries order by country_name; 
 #Ordem alfabética
+ show tables;
+ select * from Countries;
+ update Healthcare_Prices set prices = 100 where country_id = 1;
+ select * from Healthcare_Prices;
+ delete from Healthcare_Prices where prices = 43.18;
