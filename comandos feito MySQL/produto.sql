@@ -53,7 +53,7 @@ show triggers;
 
 set sql_safe_updates = 0;
 
-delete from itensvenda where produto = 002;
+delete from itensvenda where produto = 003 and quantidade = 5; #pode ser sem esse and quantidade = 5
 
 
 select * from itensvenda;
