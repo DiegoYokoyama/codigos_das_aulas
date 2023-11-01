@@ -23,3 +23,8 @@ if con.is_connected():
     for linha in linhas:
         print("palestraID = ",linha[0])
         print("palestraTema= ", linha[1])
+        
+    if  con.is_connected():
+     #cursor.close()
+     con.close()
+    print("conexao encerrada")
