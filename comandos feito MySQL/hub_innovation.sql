@@ -10,7 +10,7 @@ primary key (palestraID)
 );
 
 create table palestrante (
-palestranteID int NOT NULL,
+palestranteID int,
 palestrante_Nome varchar (50) not null,
 linkedin_palestrante varchar(200),
 imagem_palestrante varchar (200),
@@ -26,7 +26,7 @@ telefone varchar (15) not null,
 data_De_Nascimento date not null,
 genero varchar (20) not null,
 consentimento bool not null,
-palestra_ID int not null,
+palestra_ID int,
 primary key (cpf),
 constraint foreign key (palestra_ID) references palestras(palestraID)
 );
@@ -34,11 +34,10 @@ constraint foreign key (palestra_ID) references palestras(palestraID)
 create table salas (
 sala varchar (30) not null,
 salaID int auto_increment,
-palestra_Sala int not null,
+palestra_Sala int,
 primary key (salaID),
 constraint foreign key (palestra_Sala) references palestras(palestraID)
 );
-
 
 select * from palestras;
 select * from usuarios;
