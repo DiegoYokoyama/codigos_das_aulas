@@ -18,5 +18,5 @@ class HelloWorld(App):
     def on_button(self, instance):
         self.label.text = 'Professor Maurício'
 
-if name == 'main':
-    HelloWorld().run()
+#if name == 'main':
+    #HelloWorld().run()
