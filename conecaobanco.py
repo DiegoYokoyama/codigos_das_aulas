@@ -22,7 +22,10 @@ if con.is_connected():
     print('Mostrando os Registros')
     for linha in linhas:
         print("palestraID = ",linha[0])
-        print("palestraTema= ", linha[1])
+        print("palestraTema = ", linha[1])
+        print("vagas = ", linha[2])
+        print("descricao = ", linha[3])
+        
         
     if  con.is_connected():
      #cursor.close()
