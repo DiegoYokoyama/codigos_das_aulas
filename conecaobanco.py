@@ -25,7 +25,14 @@ if con.is_connected():
         print("palestraTema = ", linha[1])
         print("vagas = ", linha[2])
         print("descricao = ", linha[3])
+
+        comando = "INSERT INTO palestras(palestra_Tema, palestra_vagas, palestra_descricao) VALUES ('Novo c#',30,'ela e um novo c#');"
+        cursor.execute(comando)
+        con.commit()
         
+        #comando = ("UPDATE;")
+        #cursor.execute(comando)
+        #con.commit()
         
     if  con.is_connected():
      #cursor.close()
