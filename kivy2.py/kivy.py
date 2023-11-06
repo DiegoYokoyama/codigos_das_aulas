@@ -14,9 +14,6 @@ class HelloWorld(App):
         layout.add_widget(self.label)
         layout.add_widget(button)
         return layout
-
+    
     def on_button(self, instance):
         self.label.text = 'Professor Maurício'
-
-#if name == 'main':
-    #HelloWorld().run()
