@@ -7,31 +7,31 @@ class AcerteONumero(Screen):
         self.resultado_lbl = Label(text='Digite um número entre 1 e 100',
                                   font_size=20, size_hint_y=None, height=50)
         self.input_txt = TextInput(multiline=False, font_size=20)
-        self.submit_btn = Button(text='Adivinhar', font_size=20)
-        self.submit_btn.bind(on_press=self.check_guess)
-        self.reset_btn = Button(text='Resetar Jogo', font_size=20)
-        self.reset_btn.bind(on_press=self.reset_game)
+        self.enviar_btn = Button(text='Adivinhar', font_size=20)
+        self.enviar_btn.bind(on_press=self.verificar_acerto)
+        self.reiniciar_btn = Button(text='Resetar Jogo', font_size=20)
+        self.reiniciar_btn.bind(on_press=self.reiniciar_game)
         
         self.menu_btn = Button(text='Voltar para o Menu', font_size=20)
-        self.menu_btn.bind(on_press=self.switch_to_menu)  
+        self.menu_btn.bind(on_press=self.mudar_para_menu)  
         
         layout.add_widget(self.resultado_lbl)
         layout.add_widget(self.input_txt)
-        layout.add_widget(self.submit_btn)
-        layout.add_widget(self.reset_btn)
+        layout.add_widget(self.enviar_btn)
+        layout.add_widget(self.reiniciar_btn)
         layout.add_widget(self.menu_btn)  
         self.add_widget(layout)
-        self.reset_game()  
+        self.reiniciar_game()  
 
-    def switch_to_menu(self, *args):  
+    def mudar_para_menu(self, *args):  
         self.manager.current = 'menu_principal'
         
-    def reset_game(self, *args):
+    def reiniciar_game(self, *args):
         self.num = randint(1, 100)
         self.resultado_lbl.text = 'Digite um número entre 1 e 100'
         self.input_txt.text = ''
 
-    def check_guess(self, instance):
+    def verificar_acerto(self, instance):
         try:
             guess = int(self.input_txt.text)
             if guess == self.num:
