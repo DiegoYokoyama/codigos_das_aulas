@@ -33,12 +33,12 @@ class AcerteONumero(Screen):
 
     def verificar_acerto(self, instance):
         try:
-            guess = int(self.input_txt.text)
-            if guess == self.num:
+            adivinhar = int(self.input_txt.text)
+            if adivinhar == self.num:
                 self.resultado_lbl.text = 'Parabéns! Você acertou!'
-            elif guess < self.num:
+            elif adivinhar < self.num:
                 self.resultado_lbl.text = 'O número é maior'
-            elif guess > self.num:
+            elif adivinhar > self.num:
                 self.resultado_lbl.text = 'O número é menor'
         except ValueError:
             self.resultado_lbl.text = 'Por favor, insira um número válido.'
