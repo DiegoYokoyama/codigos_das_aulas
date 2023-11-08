@@ -22,7 +22,7 @@ class AcerteONumero(Screen):
         layout.add_widget(self.menu_btn)  
         self.add_widget(layout)
         self.reiniciar_game()  
-
+        self.cont = 0
     def mudar_para_menu(self, *args):  
         self.manager.current = 'menu_principal'
         
@@ -34,8 +34,9 @@ class AcerteONumero(Screen):
     def verificar_acerto(self, instance):
         try:
             adivinhar = int(self.input_txt.text)
+            self.cont = self.cont + 1
             if adivinhar == self.num:
-                self.resultado_lbl.text = 'Parabéns! Você acertou!'
+                self.resultado_lbl.text = f'Parabéns! Você acertou! essa e a quantidade utilizou para acertar {self.cont}'
             elif adivinhar < self.num:
                 self.resultado_lbl.text = 'O número é maior'
             elif adivinhar > self.num:
