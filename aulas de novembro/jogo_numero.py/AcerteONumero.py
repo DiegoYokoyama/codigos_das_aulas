@@ -7,13 +7,10 @@ class AcerteONumero(Screen):
         self.resultado_lbl = Label(text='Digite um número entre 1 e 100',
                                   font_size=20, size_hint_y=None, height=50)
         self.input_txt = TextInput(multiline=False, font_size=20)
-        self.enviar_btn = Button(text='Adivinhar', font_size=20)
-        self.enviar_btn.bind(on_press=self.verificar_acerto)
-        self.reiniciar_btn = Button(text='Resetar Jogo', font_size=20)
-        self.reiniciar_btn.bind(on_press=self.reiniciar_game)
+        self.enviar_btn = Button(text='Adivinhar', font_size=20,on_press=self.verificar_acerto)
+        self.reiniciar_btn = Button(text='Resetar Jogo', font_size=20,on_press=self.reiniciar_game)
         
-        self.menu_btn = Button(text='Voltar para o Menu', font_size=20)
-        self.menu_btn.bind(on_press=self.mudar_para_menu)  
+        self.menu_btn = Button(text='Voltar para o Menu', font_size=20,on_press=self.mudar_para_menu)
         
         layout.add_widget(self.resultado_lbl)
         layout.add_widget(self.input_txt)
@@ -36,7 +33,7 @@ class AcerteONumero(Screen):
             adivinhar = int(self.input_txt.text)
             self.cont = self.cont + 1
             if adivinhar == self.num:
-                self.resultado_lbl.text = f'Parabéns! Você acertou! essa e a quantidade utilizou para acertar {self.cont}'
+                self.resultado_lbl.text = f'Parabéns! Você acertou! essa e a quantidade utilizada para acertar {self.cont}'
             elif adivinhar < self.num:
                 self.resultado_lbl.text = 'O número é maior'
             elif adivinhar > self.num:
