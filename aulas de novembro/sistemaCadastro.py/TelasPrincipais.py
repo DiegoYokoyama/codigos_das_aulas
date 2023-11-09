@@ -132,7 +132,7 @@ class main(App):
         gerenciar_tela.add_widget(TelaEditar(name='Editar User'))
         gerenciar_tela.add_widget(TelasPrincipais(name = 'VoltarEditar'))
         
-        #gerenciar_tela.add_widget(Telaexcluir(name='excluir'))
+        gerenciar_tela.add_widget(Telaexcluir(name='excluir'))
         
         return gerenciar_tela
 
