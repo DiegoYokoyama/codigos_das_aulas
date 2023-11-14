@@ -23,21 +23,40 @@ class BancoDados:
         print(self.cursor.rowcount, "registro(s) inserido(s).")
         
         
-    def Editar_valores(self, id_nome):
-        select = f"select * from TelaDeCadastro where id_nome = {id_nome};"
-        self.cursor.execute(select)
+    def Editar_valores(self, nome,email,senha,id_nome):
+        editarsalve = 'update TelaDeCadastro set nome =%s, email =%s, senha=%s where id_nome=%s'
+        cadastroedit=(nome,email,senha,id_nome)
+        try :
+            self.cursor.execute(editarsalve,cadastroedit)
+            self.cadastrar.commit()
+            print("Usuário editado com sucesso!")
+        except Exception as e:
+            self.cadastrar.rollback()
+            print(f"Erro ao editar usuário: {e}")
+        finally:
+            self.cursor.close()
 
-        resultados = self.cursor.fetchall()
+        print(self.cursor.rowcount, "registro(s) editado(s).")  
         
-        for self.resultado in resultados:
-            pass
+    def Excluir_valores(self, id_nome):
+        deletecadastro=f"DELETE FROM TelaDeCadastro WHERE id_nome={id_nome}"
+        try:
+            self.cursor.execute(deletecadastro)
+            self.cadastrar.commit()
+            print("Usuário excluido com sucesso!")
+        except Exception as e:
+            self.cadastrar.rollback()
+            print(f"Erro ao excluir usuário: {e}")
+        finally:
+            self.cursor.close()
+
+        print(self.cursor.rowcount, "registro(s) excluido(s).") 
         
-    def Excluir_valores(self, id):
-        delete_query = "delete from TelaDeCadastro where id_nome = %s;"
+        '''delete_query = "delete from TelaDeCadastro where id_nome = %s;"
         delete_data = (id,)
 
         self.cursor.execute(delete_query, delete_data)
-        self.cadastrar.commit()
+        self.cadastrar.commit()'''
         
     def lista_valores(self):
 

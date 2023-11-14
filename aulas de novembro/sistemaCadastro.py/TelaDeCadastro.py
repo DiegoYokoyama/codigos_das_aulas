@@ -33,5 +33,5 @@ class TelaDeCadastro(Screen):
         
         bd = BancoDados()
         bd.Registrar_valores(nome, gmail, senha)
-        
+        bd.fechar_conexao()
         self.manager.current = 'Cadastrar User'

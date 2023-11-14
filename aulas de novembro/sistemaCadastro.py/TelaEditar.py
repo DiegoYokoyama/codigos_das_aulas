@@ -31,6 +31,13 @@ class TelaEditar(Screen):
         self.manager.current = 'VoltarEditar'
     
     def editarUser(self, *args):
+        
+        nome = self.txt_nome_editar.text
+        gmail = self.txt_email_editar.text
+        senha = self.txt_senha_editar.text 
+        id_nome = self.txt_id_verificar.text
+        
         bd = BancoDados()
-        bd.Editar_valores()
+        bd.Editar_valores(nome, gmail, senha,id_nome)
+        bd.fechar_conexao()
         self.manager.current = 'Editar User'
