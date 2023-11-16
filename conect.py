@@ -67,3 +67,46 @@ print ("mostrando os  registros")
 for linha in linhas:
     print("arroz =", linha [0])
     print("farinha = ", linha[1])"""
+    
+    
+    
+'''os.system('cls')
+        sql_cadastro = (f'{nome},{cpf},{endereco},{sexo},{idade},{rg},{email},{cidade},{estadoCivil},{escolaridade}')
+        cursor = con.cursor()
+        cursor.execute(sql_cadastro)
+        
+        sql_select = 'select * from Usuario'
+        cursor = con.cursor()
+        cursor.execute(sql_select)   
+        linhas = cursor.fetchall()'''
+        
+        
+        
+        
+        
+'''class BancoSQL:
+    def __init__(self):
+        self.UserCadastro = mysql.connector.connect ( 
+        host = '10.28.1.135',
+        database = 'UserCadastro',
+        user = 'Toshio',
+        password = 'DiegoToshio.2003'
+        )
+        if self.UserCadastro.is_connected():
+            database_informacao = self.UserCadastro.get_server_info()
+            print(f"Conectado ao Banco de Dados = {database_informacao}")
+            
+        self.cursor = self.UserCadastro.cursor()
+        
+        today = "insert into TelaDeCadastro (nome, cpf, endereco,sexo,idade,rg,email,cidade,estadoCivil,escolaridade) values (%s, %s, %s,%s, %s, %s,%s, %s, %s,%s)"
+        values = (nome, cpf, endereco,sexo,idade,rg,email,cidade,estadoCivil,escolaridade)
+
+        self.cursor.execute(today, values)
+        self.UserCadastro.commit()
+        print(self.cursor.rowcount, "registro(s) inserido(s).")
+        
+    def fechar_conexao(self):
+        if self.UserCadastro.is_connected():
+            self.UserCadastro.close()
+            print("Conexão encerrada")
+            print("-=" * 20)'''
