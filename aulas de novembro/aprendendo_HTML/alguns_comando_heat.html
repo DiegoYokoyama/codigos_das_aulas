@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="icone_site.webp">
+    <title>
+            Teste
+    </title>
+</head>
+    <body>
+        <h1>Bem vindo ao site de teste</h1> <!--H1 é para aumentar o texto, deixando com aspecto de titulo-->
+        <a href="https://www.ms.senac.br">Visite SenacMS!</a> <!--Redireciona pra um outro link ao clicar no objeto-->
+        <a href="https://www.ms.senac.br" target="_blank">Visite SenacMS! Novamente!</a> <!--Cria uma nova aba ao invés de redirecionar-->
+
+        <br> <!--Pula linha-->
+        <br>
+
+        <b>Negrito</b>
+        <br>
+
+        <i>Itálico</i>
+        <br>
+
+        <u>Underline</u>
+        <br>
+
+        <s>Tachado / Linha cortando texto</s>
+        <br>
+
+        <mark>Marca texto</mark>
+        <br>
+
+        <small>texto menor</small>
+        <br>
+
+        H<sub>2</sub>O<!--texto subscrito-->
+        <br>
+
+        2<sup>2</sup><!--texto sobrescrito-->
+        <br>
+
+        <hr></hr><!--quebra tematica-->
+
+        <br>
+                <!--Cabeçalhos-->
+        <h1>Cabeçalho 1</h1>
+
+        <h2>Cabeçalho 2</h2>
+
+        <h3>Cabeçalho 3</h3>
+
+        <h4>Cabeçalho 4</h4>
+
+        <h5>Cabeçalho 5</h5>
+
+        <h6>Cabeçalho 6</h6>
+        <br>
+
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+            when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+            and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+        <br>
+        <p title=" e um robo"> isso e um paragrafo</p>
+        <br>
+        <img src ="marshadow.png" alt ="marshadow.png"width="250px" height="200px"><!--imagem e o tamanho da imagem-->
+        <br>   
+        <br>
+
+                <!--Tabelas-->
+        <table border="1"> <!--cria uma tabela e border coloca um borda-->
+            <tr>
+                <th>empresa</th> <!--cabeçalho-->
+                <th>contato</th>
+                <th>pais</th>
+           </tr>
+            <tr>
+                <td>senac</td> <!--imformações da tabelas-->
+                <td>ederson</td>
+                <td>brasil</td>
+
+            </tr>
+        </table>
+        <br>
+
+                <!--Listas desordenado-->
+        <ul>
+            <li>segunda</li>
+            <li>terça</li>
+            <li>quarta</li>
+        </ul>
+        <br>
+
+                <!--Lista ordenadas-->
+        <ol>
+            <li>segunda</li>
+            <li>terça</li>
+            <li>quarta</li>
+        </ol>
+
+        <br>
+        
+        <adress>
+            Voce pode entrar em contato com o autor em <a href="ms.senac.br">ms.senac.br</a>.<br>
+            
+            Se encontrar qualquer bug, por favor <a href="mailto:vinicius2002mr@gmail.com">contate o administrador do site</a>.<br> 
+            <!--Redireciona pra um gerenciador de emails (tipo outlook)-->
+
+            Você também pode querer nos visitar:<br>2022<br>
+            Campo Grande, MS, Brasil<br>
+        </adress>
+
+        <!-- Anotações -->
+            <!--Navegação nas Pastas-->
+                <!--../imagem.png ../ faz com que retorne um arquivo para pegar uma imagem.-->
+                <!--./imagem.png ./ faz com que se use uma imagem do proprio arquivo-->
+                <!--/imagem.png / faz com que se use o arquivo root(raiz)-->
+                <!--../nomedapasta/imagem.png ../nomedapasta faz com que se retorne uma pasta e acesse a outra nomeada.-->
+                <!--Alguns acima podem ser usados sucessicamente: ../../, /pasta1/pasta2/pasta3 -->
+
+        <!--FOR: é um relacionador, caso 2 atributos tenham esse mesmo nome, eles estão relacionados -->
+            <!--ID: é uma tag que é usada no codigo para ser procurado depois. Atribui um identificador ao elemento, usado pro JavaScript.-->
+            <!--NAME: é uma busca pelo CSS, especifica o nome de um formulário-->
+            <!--VALUE: determina um valor para um atributo (varia dependendo do atributo)-->
+            <!--PLACEHOLDER: coloca uma breve dica no que deve ser colocado em um input.-->
+            <!--MAXLENGTH: define o quanto pode ser digitado em um input-->
+            <!--SIZE: define o tamanho gráfico do input-->
+            <!--ACTION: usado dentro da tag form, ele envia para o arquivo de destino colocado-->
+            <!--FIELDSET: agrupa elementos de um formulário. Desenha uma caixa separando. <legend> é usado para colocar uma legenda.-->
+
+        <form><!--container-->
+            <label for="fname">Primeiro nome.</label> <!--label-->
+            <br>
+            <input type="text" id="fname" name="fname"><!--input-->
+            <br>
+            <label for="Iname">Último nome: </label>
+            <br> 
+            <input type="text" id="fname" name="fname"required>
+            <br>
+        </form>
+
+        <p>Qual sua linguagem preferida:</p> 
+        
+        <form> <!--radio seleciona so uma caixa-->
+            <input type="radio" id="html" name="fav_language" value="HTML">
+            
+            <label for="html">HTML</label>
+            <br>
+            <input type="radio" id="css" name="fav_language" value="CSS">
+            
+            <label for="css">CSS</label>
+            <br>
+            <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+            
+            <label for="javascript">JavaScript</label> 
+        </form>
+        <br>
+
+        <p>Qual sua linguagem preferida:</p> 
+
+        <form> <!--check box seleciona um ou mais caixa-->
+
+            <input type="checkbox" id="html" name="fav_language" value="html">
+            <label for="html"> html</label>
+            <br>
+            <input type="checkbox" id="css" name="fav_language" value="css">
+            <label for="css"> css</label>
+            <br>
+            <input type="checkbox" id="js" name="fav_language" value="js">
+            <label for="js">js</label>
+        </form>
+        <br>
+
+        <form><!--input submit faz com o botão de enviar-->
+            <form action="/action_page.php">
+                <label for="fname">primeiro Nome:</label>
+                <br>
+                <input type="text" id="fname" name="fname" value="ederson">
+                <br>
+                <label for="Iname"> Ultimo nome:</label> 
+                <br>
+                <input type="text" id="Iname" name="Iname" value="Costa">
+                <br>
+                <br>
+                <input type="submit" value="Enviar">
+            </form>
+        
+            <form>
+                <firldset id="pessoa">
+                    <legend> dados pessoais</legend>
+                    <p>Nome <input type="text" name="texto" id="campot" size="20" maxlength="10" placeholder="Nome completo"> </p>
+                </firldset>
+            </form>
+    </body>
+
+
+<!--<base href = "link">-->
+
