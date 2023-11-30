@@ -21,14 +21,14 @@
 
             <label for="cpf">cpf:</label>
             <br>
-            <input type="text" name="cpf" id="cpf" size="10" maxlength="14" placeholder="000.000.000-00">
+            <input type="number" name="cpf" id="cpf" size="10" maxlength="11" placeholder="cpf">
 
             <br>
             <br>
 
             <label for="data">data:</label> 
             <br>
-            <input type="date" name="data" id="data" size="20" maxlength="10" placeholder="00-00-0000">
+            <input type="date" name="data" id="data" size="20" maxlength="10" placeholder="data">
 
             <br>
             <br>
@@ -53,7 +53,7 @@
 
             <label for="RG">RG:</label> 
             <br>
-            <input type="number" name="RG" id="RG" size="20" maxlength="6" placeholder="000000">
+            <input type="number" name="RG" id="RG" size="20" maxlength="6" placeholder="RG">
         </fieldset>
     </form>
 
@@ -65,35 +65,35 @@
 
             <label for="Estado">Estado:</label> 
             <br>
-            <input type="text" name="Estado" id="Estado" size="20" maxlength="50" placeholder="Mato Grosso">
+            <input type="text" name="Estado" id="Estado" size="20" maxlength="50" placeholder="Estado">
 
             <br>
             <br>
 
             <label for="Cidade">Cidade:</label> 
             <br>
-            <input type="text" name="Cidade" id="Cidade" size="20" maxlength="50" placeholder="Sinop">
+            <input type="text" name="Cidade" id="Cidade" size="20" maxlength="50" placeholder="Cidade">
 
             <br>
             <br>
 
             <label for="Bairro">Bairro:</label> 
             <br>
-            <input type="text" name="Bairro" id="Bairro" size="20" maxlength="50" placeholder="vila nova">
+            <input type="text" name="Bairro" id="Bairro" size="20" maxlength="50" placeholder="Bairro">
 
             <br>
             <br>
 
             <label for="Rua">Rua:</label> 
             <br>
-            <input type="text" name="Rua" id="Rua" size="20" maxlength="50" placeholder="Rua 39">
+            <input type="text" name="Rua" id="Rua" size="20" maxlength="50" placeholder="Rua">
 
             <br>
             <br>
 
             <label for="Cep">Cep:</label> 
             <br>
-            <input type="number" name="Cep" id="Cep" size="20" maxlength="8" placeholder="00000000">
+            <input type="number" name="Cep" id="Cep" size="20" maxlength="8" placeholder="Cep">
 
 
         </fieldset>
@@ -105,21 +105,308 @@
         <fieldset id="Financeiros">
             <legend> Dados Financeiros</legend>
             
-            <label for="NumeroConta">Numero da conta:</label> 
+            <label for="Numero_Conta">Numero da conta:</label> 
             <br>
-            <input type="number" name="NumeroConta" id="NumeroConta" size="20" maxlength="5" placeholder="00000">
+            <input type="number" name="Numero_Conta" id="Numero_Conta" size="20" maxlength="5" placeholder="Numero da conta">
 
             <br>
             <br>
 
-            <label for="NumeroCartao">Numero do cartao:</label> 
+            <label for="Numero_Cartao">Numero do cartao:</label> 
             <br>
-            <input type="number" name="NumeroCartao" id="NumeroCartao" size="20" maxlength="16" placeholder="0000000000000000">
+            <input type="number" name="Numero_Cartao" id="Numero_Cartao" size="20" maxlength="16" placeholder="Numero do cartao">
 
             <br>
+            <br>
 
-            
+            <label for="Agencia">Numero Da Agencia:</label> 
+            <br>
+            <input type="number" name="Agencia" id="Agencia" size="20" maxlength="10" placeholder="Numero Da Agencia">
+
+            <br>
+            <br>
+
+            <label for="Salario">Salario:</label> 
+            <br>
+            <input type="number" name="Salario" id="Salario" size="20" maxlength="12" placeholder="Salario">
+
+            <br>
+            <br>
+
+            <label for="Banco">Nome do Banco:</label> 
+            <br>
+            <input type="text" name="Banco" id="Banco" size="20" maxlength="50" placeholder="Nome do Banco">
+
 
         </fieldset>
     </form>
+
+    <br>
+
+    <form>
+        <fieldset id="Comerciais">
+            <legend>Dados Comerciais</legend>
+
+            <label for="Proprietario">Nome do Proprietario:</label> 
+            <br>
+            <input type="text" name="Proprietario" id="Proprietario" size="20" maxlength="50" placeholder="Nome do Proprietario">
+
+            <br>
+            <br>
+
+            <label for="CNPJ">CNPJ:</label> 
+            <br>
+            <input type="number" name="CNPJ" id="CNPJ" size="20" maxlength="30" placeholder="CNPJ">
+
+            <br>
+            <br>
+
+            <label for="Fantagia">Nome Fantagia:</label> 
+            <br>
+            <input type="text" name="Fantagia" id="Fantagia" size="20" maxlength="100" placeholder="Nome Fantagia">
+
+            <br>
+            <br>
+
+            <label for="Endereço_Comercio">Endereço do Comercio:</label> 
+            <br>
+            <input type="text" name="Endereço_Comercio" id="Endereço_Comercio" size="20" maxlength="100" placeholder="Endereço do Comercio">
+
+            <br>
+            <br>
+
+            <label for="Atuação">Ramo de Atuação:</label> 
+            <br>
+            <input type="text" name="Atuação" id="Atuação" size="20" maxlength="100" placeholder="Ramo de Atuação">
+
+        </fieldset>
+    </form>
+
+    <br>
+
+    <form>
+        <fieldset id="Veículo">
+
+            <legend>Cadastro Veículo</legend>
+
+            <label for="Marca">Marca do veiculo:</label> 
+            <br>
+            <input type="text" name="Marca" id="Marca" size="20" maxlength="50" placeholder="Marca do veiculo">
+
+            <br>
+            <br>
+
+            <label for="ano">Ano Do Veiculo:</label> 
+            <br>
+            <input type="date" name="ano" id="ano" size="20" maxlength="10" placeholder="Ano Do Veiculo">
+
+            <br>
+            <br>
+
+            <label for="Placa">Placa Do Veiculo:</label> 
+            <br>
+            <input type="text" name="Placa" id="Placa" size="20" maxlength="7" placeholder="Placa Do Veiculo">
+
+            <br>
+            <br>
+
+            <label for="Modelo">Modelo Do Veiculo:</label> 
+            <br>
+            <input type="text" name="Modelo" id="Modelo" size="20" maxlength="100" placeholder="Modelo Do Veiculo">
+
+            <br>
+            <br>
+
+            <label for="Renavam">Renavam Do Veiculo:</label> 
+            <br>
+            <input type="text" name="Renavam" id="Renavam" size="20" maxlength="100" placeholder="Renavam Do Veiculo">
+
+        </fieldset>
+    </form>
+
+    <br>
+
+    <form>
+        <fieldset id="Imóvel">
+            <legend>Cadastro Imóvel</legend>
+
+            <label for="Endereço_Imovel">Endereço do Imovel:</label> 
+            <br>
+            <input type="text" name="Endereço_Imovel" id="Endereço_Imovel" size="20" maxlength="50" placeholder="Endereço do Imovel">
+
+            <br>
+            <br>
+
+            <label for="Valor">Valor do Imovel:</label> 
+            <br>
+            <input type="number" name="Valor" id="Valor" size="20" maxlength="12" placeholder="Valor do Imovel">
+
+            <br>
+            <br>
+
+            <label for="Proprietario_Imovel">Proprietario do Imovel:</label> 
+            <br>
+            <input type="text" name="Proprietario_Imovel" id="Proprietario_Imovel" size="20" maxlength="50" placeholder="Proprietario do Imovel">
+
+            <br>
+            <br>
+
+            <label for="Escritura">Escritura do Imovel:</label> 
+            <br>
+            <input type="number" name="Escritura" id="Escritura" size="20" maxlength="50" placeholder="Escritura do Imovel">
+
+            <br>
+            <br>
+
+            <label for="IPTU">Valor do IPTU:</label> 
+            <br>
+            <input type="number" name="IPTU" id="IPTU" size="20" maxlength="50" placeholder="Valor do IPTU">
+
+        </fieldset>
+    </form>
+
+    <br>
+
+    <form>
+        <fieldset id="Cônjuge">
+            <legend>Dados Cônjuge</legend>
+
+            <label for="fNome">Nome:</label> 
+            <br>
+            <input type="text" name="fNome" id="fNome" size="20" maxlength="50" placeholder="Nome">
+
+            <br>
+            <br>
+
+            <label for="sSexo">Sexo:</label> 
+            <br>
+            <input type="radio" id="mMasculino" name="fav_language" value="mMasculino">
+            <label for="mMasculino">Masculino</label>
+
+            <br>
+            <input type="radio" id="fFeminino" name="fav_language" value="fFeminino">
+            <label for="fFeminino">Feminino</label>
+
+            <br>
+            <input type="radio" id="oOutros" name="fav_language" value="oOutros">
+            <label for="oOutros">Outros</label> 
+
+            <br>
+            <br>
+            
+            <label for="iIdade">Idade:</label> 
+            <br>
+            <input type="number" name="iIdade" id="iIdade" size="20" maxlength="3" placeholder="Idade">
+
+            <br>
+            <br>
+
+            <label for="Telefone">Telefone:</label> 
+            <br>
+            <input type="number" name="Telefone" id="Telefone" size="20" maxlength="15" placeholder="Telefone">
+
+            <br>
+            <br>
+
+            <label for="cCpf">Cpf:</label> 
+            <br>
+            <input type="number" name="cCpf" id="cCpf" size="20" maxlength="11" placeholder="Cpf">
+
+        </fieldset>
+    </form>
+
+    <br>
+
+    <form>
+        <fieldset>
+            <legend> Dados dos Filhos</legend>
+
+            <label for="Nome_filho">Nome do Filho Completo:</label> 
+            <br>
+            <input type="text" name="Nome_filho" id="Nome_filho" size="20" maxlength="100" placeholder="Nome do Filho Completo">
+
+            <br>
+            <br>
+            
+            <label for="Idade_filho">Idade do filho:</label> 
+            <br>
+            <input type="number" name="Idade_filho" id="Idade_filho" size="20" maxlength="3" placeholder="Idade do filho">
+
+            <br>
+            <br>
+            
+            <label for="Filho_Sexo">Sexo:</label> 
+            <br>
+            <input type="radio" id="fMasculino" name="fav_language" value="fMasculino">
+            <label for="fMasculino">Masculino</label>
+
+            <br>
+            <input type="radio" id="mFeminino" name="fav_language" value="mFeminino">
+            <label for="mFeminino">Feminino</label>
+
+            <br>
+            <input type="radio" id="fOutros" name="fav_language" value="fOutros">
+            <label for="fOutros">Outros</label> 
+
+            <br>
+            <br>
+
+            <label for="Telefone_filho">Telefone do filho:</label> 
+            <br>
+            <input type="number" name="Telefone_filho" id="Telefone_filho" size="20" maxlength="15" placeholder="Telefone do filho">
+
+            <br>
+            <br>
+
+            <label for="Cpf_filho">Cpf do filho:</label> 
+            <br>
+            <input type="number" name="Cpf_filho" id="Cpf_filho" size="20" maxlength="11" placeholder="Cpf do filho">
+        
+        </fieldset>
+    </form>
+
+    <br>
+
+    <form>
+        <fieldset>
+            <legend>Dados Formação Escolar</legend>
+
+            <label for="Ano_Formação">Ano de Formação:</label> 
+            <br>
+            <input type="date" name="Ano_Formação" id="Ano_Formação" size="20" maxlength="10" placeholder="Ano de Formação">
+
+            <br>
+            <br>
+
+            <label for="Nome_Instituição">Nome da Instituição:</label> 
+            <br>
+            <input type="text" name="Nome_Instituição" id="Nome_Instituição" size="20" maxlength="100" placeholder="Nome da Instituição">
+
+            <br>
+            <br>
+
+            <label for="Nome_Curso">Nome do Curso:</label> 
+            <br>
+            <input type="text" name="Nome_Curso" id="Nome_Curso" size="20" maxlength="100" placeholder="Nome do Curso">
+
+            <br>
+            <br>
+
+            <label for="Quantidade de Sementres">Quantidade_Sementres:</label> 
+            <br>
+            <input type="number" name="Quantidade_Sementres" id="Quantidade_Sementres" size="20" maxlength="2" placeholder="Quantidade de Sementres">
+            
+            <br>
+            <br>
+
+            <label for="Titulo">Titulo:</label> 
+            <br>
+            <input type="text" name="Titulo" id="Titulo" size="20" maxlength="100" placeholder="Titulo ex:Tecnico">
+           
+        </fieldset>
+    </form>
+
+<input type="submit" value="Enviar">
+
+
 </body>
