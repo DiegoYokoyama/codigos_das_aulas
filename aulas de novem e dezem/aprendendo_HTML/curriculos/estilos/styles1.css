@@ -1,0 +1,7 @@
+html, body{
+    height:100%;
+    margin:0;
+}
+body {
+    background: radial-gradient(circle, #f8f8f8, #8e87eb) no-repeat; 
+}

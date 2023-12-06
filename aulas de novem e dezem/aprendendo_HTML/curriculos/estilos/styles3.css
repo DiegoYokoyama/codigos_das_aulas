@@ -1,0 +1,11 @@
+nav {
+    box-decoration-break: clone;
+    background-color: #3195b9;
+    padding: 10px;
+    border: 2px solid #000000;
+    margin: 5px;
+    width: 750px;
+
+    border-radius: 100px;
+
+}
