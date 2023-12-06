@@ -1,5 +1,66 @@
+/* 
+CSS
+    Maneiras de uso
+        Inline: Usado dentro do elemento.
+        Interno: usado dentro do <head> e aplicado no documento todo.
+        Externo: exportado de um arquivo externo.
+
+    Propriedades
+        formatação
+            formatação de texto
+                text-align: permite alinhar textos a esquerda, a direita, centralizados ou justificados.
+                text-aling: left, right, center, justify
+
+                font-weight: permite ajustar a importância (espessura) da fonte.
+                font-weight: normal, bold, bolder, 100, 200,900...
+
+                font-size: permite ajustar o tamanho da fonte.
+                font-size: 15px, large, 150%
+
+                font-family: permite escolher a tipografia de um texto
+                font-family: "Times New Roman", Times, serif
+
+                font-style: define o estilo da fonte, itálico, normal, etc
+                font-style: normal, italic, oblique
+
+            formatação de posição
+                top, left, right, bottom: indicam respectivamente, a distância do elemento das bordas do documento
+                ou dos elementos proximos.
+                top, left, right, bottom: 10px(in px, cm, etc, auto)
+
+                position: indica como a posição de um elemento no documento é calculada, pode ser absoluta quando é calculada
+                em relação ao elemento que a contém ou relativa quando é calculada em relação á sua posição original.    
+                position: absolute (Da borta até o elemento), relative (Do elemento em diante).           
+                
+        propriedades de espaçamento
+            padding: indica o espaço livre entre um elemento e seus elementos internos.
+            padding: 10px(in px, cm, etc, %)
+
+            margin: indica o espaço livre entre um elemento e os elementos externos.
+            margin: 10px(in px, cm, etc, %)
+
+        propriedades de cor:
+            color: indica a cor do elemento.
+            color: #fefdb8, black, rgb(201, 76, 76);
+
+            background-color: indica a cor de fundo do elemento.
+            background:url("images/fundo-topo.png") no-repeat; no-repeat faz com que a imagem não se repita, é possivel colocar imagens de fundo.
+        
+        efeitos:
+            border-color, border-style, border-width, border-radius: indicam se um elemento tem ou não borda e quais são suas propriedades.
+            border-color: blue, red...
+            border-style: double, hidden, solid
+            border-width; 10px(in px, cm, etc, %)
+            border-radius: 25px; (deixa mais arredondado)
+            
+
+            box-shadow: aplica um efeito de sombra a um elemento.
+            box-shadow: 10px(inicio) 10px(profundidade) 8px(interno) #888888(cor);
+*/
+
 body{
     background-color: blueviolet;
+
 }
 
 p{
