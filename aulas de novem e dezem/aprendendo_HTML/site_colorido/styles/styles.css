@@ -15,14 +15,14 @@
 }
 
 #main{
-    padding-left: 1.5%;
-    padding-top: 1%;
-    padding-bottom: 1%;
+    padding-left: 1.5%; /* da um espaco no lado */
+    padding-top: 1%; /* da um espaco em cima */
+    /* padding-bottom: 1%; */
     margin-left: 25%;
     margin-right: 30%;
     background-color: white;
-    border-radius: 0.5%;
-    box-shadow: 5%;
+    /* border-radius: 0.5%;
+    box-shadow: 5%; */
 }
 
 body{
