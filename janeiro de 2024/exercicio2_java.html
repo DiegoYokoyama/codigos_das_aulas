@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script type="text/javascript">
+            let produto = window.prompt("nome do produto: "); 
+            let quantidade = window.prompt("quantidade do produto: ");
+            let valor = window.prompt("valor do produto unitario: ");
+            let desconto = window.prompt("desconto do produto : "); // os codigo tem que ser linha por linha pq ele le uma linha de cada vez 
+                                                                    //ex se eu colocar essa parte do codigo de baixo do valor_de_desconto vai bugar
+
+            let valor_de_desconto = Number(desconto / 100) * Number(quantidade * valor);
+
+            
+            let valor_da_compra = (quantidade *valor) - desconto;
+            window.alert(` o nome do produto: ${produto}  e o valor da compra = ${valor_da_compra.toFixed(2)}`);
+
+        </script>
+    </body>
+</html>
