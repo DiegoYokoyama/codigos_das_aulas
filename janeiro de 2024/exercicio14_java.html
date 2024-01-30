@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+            <html>
+                <head>
+                    
+                </head>
+                <body>
+                    <script type="text/javascript">
+                        let salario = window.prompt ("escreva o seu salario: ");
+                        salario = parseFloat (salario)
+
+                        if (salario < 280.00){
+                            let reajust1 = (salario * 20) /100
+                            let totalsalario = (salario + reajust1)
+                            window.alert(`seu salario anterior = ${salario}\n o percentual de aumento aplicado = 20 %\n o valor que voce ganhou = ${reajust1}\n seu  novo salario = ${totalsalario}`);
+                        }
+
+                        else if(salario >= 280.00 && salario <= 700.00){ 
+                                let reajust2 = (salario * 15) /100
+                                let totalsalario = (salario + reajust2)
+                                window.alert(`seu salario anterior = ${salario}\n o percentual de aumento aplicado = 15 %\n o valor que voce ganhou = ${reajust2}\n seu  novo salario = ${totalsalario}`);
+
+                        }
+
+                        else if(salario >= 700.00 && salario <= 1500.00){ 
+                                let reajust3 = (salario * 10) /100
+                                let totalsalario = (salario + reajust3)
+                                window.alert(`seu salario anterior = ${salario}\n o percentual de aumento aplicado = 10 %\n o valor que voce ganhou = ${reajust3}\n seu  novo salario = ${totalsalario}`);
+
+                        }
+
+                        else{
+                            let reajust4 = (salario * 5) /100
+                            let totalsalario = (salario + reajust4)
+                            window.alert(`seu salario anterior = ${salario}\n o percentual de aumento aplicado = 5 %\n o valor que voce ganhou = ${reajust4}\n seu  novo salario = ${totalsalario}`);
+                        }
+
+                            
+                        
+                        
+                        
+            
+                    </script>
+                </body>
+            </html>

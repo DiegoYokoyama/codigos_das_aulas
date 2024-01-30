@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+            <html>
+                <head>
+                    
+                </head>
+                <body>
+                    <script type="text/javascript">
+                        let salario = window.prompt ("escreva o seu salario: ");
+                        salario = parseFloat (salario)
+
+                        if (salario < 500.00){
+                            let reajust1 = salario * 1.15
+                            window.alert(`seu  novo salario com o reajuste de 15% ${reajust1}`);
+                        }
+
+                        else if(salario >= 500.00 && salario <= 1000.00){ 
+                                let reajust2 = salario * 1.10
+                                window.alert(`seu  novo salario com o reajuste de 10% ${reajust2}`);
+
+                        }
+
+                        else{
+                            let reajust3 = salario * 1.05
+                            window.alert(`seu  novo salario com o reajuste de 5% ${reajust3}`);
+                        }
+
+                            
+                        
+                        
+                        
+            
+                    </script>
+                </body>
+            </html>

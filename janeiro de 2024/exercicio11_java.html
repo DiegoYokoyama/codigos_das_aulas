@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <script type="text/javascript">
+        let Primeiro_Numero = parseInt(window.prompt("Escreva um número:"));
+        let Segundo_Numero = parseInt(window.prompt("Escreva um segundo número:"));
+        let Terceiro_Numero = parseInt(window.prompt("Escreva um terceiro número:"));
+
+        if (Primeiro_Numero && Segundo_Numero && Terceiro_Numero) {
+            let menorNumero = Math.min(Primeiro_Numero, Segundo_Numero, Terceiro_Numero);
+            let maiorNumero = Math.max(Primeiro_Numero, Segundo_Numero, Terceiro_Numero);
+
+            let repetido = Primeiro_Numero === Segundo_Numero || Primeiro_Numero === Terceiro_Numero || Segundo_Numero === Terceiro_Numero;
+
+            if (repetido) {
+                window.alert(`algum numero foi repetido\n o primeiro numero: ${Primeiro_Numero}\n o segundo número é: ${Segundo_Numero}\n e o terceiro numero ${Terceiro_Numero}`);
+            } 
+            else {
+                window.alert(`O maior número é: ${maiorNumero}\nO menor número é: ${menorNumero}`);
+            }
+        } 
+        else {
+            window.alert("Por favor, insira números válidos.");
+        }
+    </script>
+</body>
+</html>
