@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <script type="text/javascript">
+            let cand_1 = 0
+            let cand_2 = 0
+            let cand_3 = 0
+            let numero_votante = parseFloat(window.prompt('Qual o numero de eleitores'))
+
+
+            for (let i = 0; i < numero_votante; i++) {
+                let numero = parseFloat(window.prompt(`os candidatos sao \n1-candidado_1\n2-para condidado_2\n3-para condidaro_3 \ncontagem de eleitores ${i + 1} º número: `));
+                if (numero == 1){ 
+                    cand_1+=1
+                }
+
+                else if (numero == 2){
+                    cand_2+=1
+                }
+                else if (numero == 3){
+                    cand_3+=1
+                }
+            }
+            let ganhador =''
+            if (cand_1 > cand_2 && cand_1 > cand_3 ){
+                            ganhador ='candidato_1'
+                        }
+
+                        else if(cand_2 > cand_3 && cand_2 > cand_1){
+                            ganhador ='candidato_2'
+
+                        }
+
+                        else if(cand_3 > cand_2 && cand_3 > cand_1){
+                            ganhador ='candidato_3'
+
+                        }
+
+
+
+            window.alert(`os votos dos candidatos \ncand_1: ${cand_1}\ncand_2: ${cand_2}\ncand_3: ${cand_3}\ne o cantidato ganhador ${ganhador}`);
+        </script>
+    </body>
+</html>
