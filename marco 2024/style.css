@@ -1,0 +1,26 @@
+.padrao{
+    background-color: #d9d9d9;
+    padding: 30px;
+    text-align: center;
+    color: black;
+    font-size: 30px;
+    border-radius: 30px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+#a , #b , #c , #d , #e {
+    margin-bottom: 10px;
+}
+
+
+
+h1{
+    background-color:black;
+    padding: 35px;
+    text-align: center;
+    color: white;
+    margin-left: 15%;
+    margin-right: 15%;
+    border-radius: 30px;
+}
